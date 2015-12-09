@@ -10,6 +10,8 @@ namespace CLIM
     {
         static void Main(string[] args)
         {
+            DataRequest re = new DataRequest();
+            re.Request("");
         }
     }
 }
