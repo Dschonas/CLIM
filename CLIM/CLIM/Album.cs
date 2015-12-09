@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace CLIM
 {
-    //Attributes
-    //Name or ArtistName
-    //Song
-    //ListOfSongs
-    //..
-
-    class Artist
+    class Album
     {
     }
 }

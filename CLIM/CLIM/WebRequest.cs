@@ -13,7 +13,7 @@ namespace CLIM
     {
         public void Request(string searchTerm, string typeOfSearch)
         {
-            switch (typeOfSearch)
+            switch (typeOfSearch.ToLower())
             {
                 case "artist":
                     //request from the URL
