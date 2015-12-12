@@ -14,7 +14,19 @@ namespace CLIM
         static void Main(string[] args)
         {
             DataRequest re = new DataRequest();
-            re.Request("Adele", "artist");
+            //re.Request("Adele", "artist");
+            Console.WriteLine("Hello, what do you want to do?\n");
+
+            switch (Console.ReadLine())
+            {
+                case "search":
+                    Console.WriteLine("Enter your search term: ");
+                    string searchTerm = Console.ReadLine();
+                    re.Request(searchTerm, "artist");
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
