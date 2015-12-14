@@ -15,7 +15,7 @@ namespace CLIM
         {
             DataRequest re = new DataRequest();
             //re.Request("Adele", "artist");
-            Console.WriteLine("Hello, what do you want to do?\n");
+            Console.WriteLine("Hello, what do you want to do?");
 
             switch (Console.ReadLine())
             {
