@@ -23,6 +23,9 @@ namespace CLIM
                     Console.WriteLine("Enter your search term: ");
                     string searchTerm = Console.ReadLine();
                     re.Request(searchTerm, "artist");
+
+                    ToXML t = new ToXML();
+                    t.Conversion();
                     break;
                 default:
                     break;
