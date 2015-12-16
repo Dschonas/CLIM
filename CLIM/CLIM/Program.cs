@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Schema;
+using Newtonsoft.Json.Linq;
+using System.Xml.Linq;
+using System.Xml;
+using System.IO;
 
 namespace CLIM
 {
@@ -24,9 +30,17 @@ namespace CLIM
                     string searchTerm = Console.ReadLine();
                     re.Request(searchTerm, "artist");
 
-                    ToXML t = new ToXML();
-                    t.Conversion();
+                    JsonLinqQuery t = new JsonLinqQuery();
+                   // t.Conversion();
                     break;
+
+                case "test":
+
+                    
+                    
+                    break;
+
+
                 default:
                     break;
             }
