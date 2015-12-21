@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Album.cs" />
     <Compile Include="Artist.cs" />
+    <Compile Include="InputHandler.cs" />
     <Compile Include="Media.cs" />
     <Compile Include="ObjectDumper.cs" />
     <Compile Include="Podcast.cs" />

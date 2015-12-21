@@ -15,7 +15,6 @@ namespace CLIM
 
         public void Request(string searchTerm, string typeOfSearch)
         {
-            SearchTerm = searchTerm;
             switch (typeOfSearch.ToLower())
             {
                 case "artist":
