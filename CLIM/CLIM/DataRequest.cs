@@ -45,5 +45,9 @@ namespace CLIM
             return dataFromURL;
         }
 
+        public void Test() {
+            GetJSon("test");
+        }
+
     }
 }
