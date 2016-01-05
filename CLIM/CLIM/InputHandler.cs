@@ -33,20 +33,28 @@ namespace CLIM
             bool done = false;
             do
             {
-                Console.WriteLine("Hello,");
+                Console.WriteLine("Hello, I am CLIRI");
                 Console.WriteLine("Possible commands:");
-                Console.WriteLine("\t- search online (searches the wanted term via the Itunes URL)");
-                Console.WriteLine("\t- search offline (searches the wanted term via a)");
-                Console.WriteLine("\t- custom XML file based on previous search requests");
-                Console.WriteLine("\t- test");
-                Console.WriteLine("\t- possible ones: delete history/to start a track of");
-                Console.WriteLine("\t- an artist/to open a preview pic of an artist");
+                Console.WriteLine("\t- search online (iTunes Database)");
+                Console.WriteLine("\t- search offline (the saved past searches)");
+                Console.WriteLine("\t- in future: delete history/to start a track of");
+                Console.WriteLine("\t  an artist/to open a preview pic of an artist");
 
-
+                Console.WriteLine("Type in \"end\" to close CLIRI.");
                 Console.WriteLine("So, what do you want to do?");
 
                 switch (Console.ReadLine().ToLower())
                 {
+                    case "search":
+
+                        Console.WriteLine("Online or offline?");
+                        SearchTerm = Console.ReadLine();
+
+                        if (SearchTerm.Equals("online"))
+                            goto case "search online";
+                        if (SearchTerm.Equals("offline"))
+                            goto case "search offline";
+                        break;
 
                     case "search online":
 
@@ -57,8 +65,7 @@ namespace CLIM
                         //Console.WriteLine(GetDataFromJson(3, "artistName", JsonRequest(SearchTerm)));
                         //Console.WriteLine(GetPrintedDataFromJson(3, "artistName", JsonRequest(SearchTerm)));
                         Console.ReadKey();
-
-                        done = true;
+                        
                         break;
 
                     case "search offline":
@@ -66,9 +73,14 @@ namespace CLIM
                         done = true;
                         break;
 
+                    case "end":
+
+                        done = true;
+                        break;
+
                     case "test":
 
-                        string json = JsonRequest("adele");
+                        string json = JsonRequest("Adele");
 
                         JObject rss = JObject.Parse(json);
 
@@ -87,14 +99,13 @@ namespace CLIM
 
                     default:
 
-                        Console.WriteLine(Console.ReadLine() + " is not a valid command!");
+                        Console.WriteLine("This is not a valid command!");
                         break;
                 }
             }
             while (!done);
+            System.Environment.Exit(1);
         }
-
-
 
         //DATA REQUEST SECTION
 
