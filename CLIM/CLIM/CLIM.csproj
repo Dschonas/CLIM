@@ -56,8 +56,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Song.cs" />
-    <Compile Include="ToXML.cs" />
-    <Compile Include="DataRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
