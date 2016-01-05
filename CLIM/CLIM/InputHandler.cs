@@ -116,7 +116,7 @@ namespace CLIM
             return dataFromURL;
         }
 
-        //Fetches the necessary data from the JSON
+        //Fetches the necessary and returns data from the JSON
         //  - numberOfRecord    which record of the JsonRequest() should be taken
         //  - attribute         the name of the attribute you want to get the information about
         //  - json              the json file of the searched term
