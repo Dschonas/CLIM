@@ -59,10 +59,47 @@ namespace CLIM
                         SearchTerm = Console.ReadLine();
 
                         string jsonSearch = JsonRequest(SearchTerm);
-                        Console.WriteLine("I found " + getNumberOfResults(jsonSearch) + " results!");
-                        LinqJsonForOneRecord(jsonSearch);
-                        //Console.WriteLine(GetDataFromJson(3, "artistName", JsonRequest(SearchTerm)));
-                        //Console.WriteLine(GetPrintedDataFromJson(3, "artistName", JsonRequest(SearchTerm)));
+                        //Console.WriteLine("I found " + getNumberOfResults(jsonSearch) + " results!");
+                        //GetPrintedDataFromJson(0, "artistName", jsonSearch);
+                        ObjectCreation oc = new ObjectCreation();
+                        oc.createObjects(jsonSearch);
+                        if (oc.Artists.Count != 0)
+                        {
+                            if (oc.Artists.Count > 1)
+                                Console.WriteLine("I found " + oc.Artists.Count + " Artists based on your search!");
+                            else
+                                Console.WriteLine("I found one Artist based on your search!");
+
+                            foreach (Artist a in oc.Artists)
+                            {
+                                Console.WriteLine("Name: " + a.Name);
+                                Console.WriteLine("Country: " + a.Country);
+                                Console.WriteLine("Link: " + a.ArtistViewLink);
+                                Console.WriteLine("iTunes ID: " + a.ArtistID);
+                                Console.WriteLine("_______________________________________");
+                            }
+                        }
+                        if (oc.Medias.Count != 0)
+                        {
+                            if (oc.Medias.Count > 1)
+                                Console.WriteLine("I found " + oc.Medias.Count + " Songs or Podcasts based on your search!");
+                            else
+                                Console.WriteLine("I found one Song or Podcast based on your search!");
+                            
+                            foreach (Media m in oc.Medias)
+                            {
+                                Console.WriteLine("Type: " + m.KindOfMedia);
+                                Console.WriteLine("Name: " + m.TrackName);
+                                Console.WriteLine("Genre: " + m.Genre);
+                                Console.WriteLine("Number: " + m.TrackNumber);
+                                Console.WriteLine("Price: " + m.TrackPrice + "$");
+                                Console.WriteLine("Duration: " + (m.Tracktime/1000/60).ToString("F") + "min");
+                                Console.WriteLine("Link: " + m.TrackViewLink);
+                                Console.WriteLine("Song Preview: " + m.TrackPreviewLink);
+                                Console.WriteLine("_______________________________________");
+                            }
+                        }
+                        //LinqJsonForOneRecord(jsonSearch);
                         Console.ReadKey();
                         
                         break;
@@ -141,8 +178,7 @@ namespace CLIM
         {
             JObject rss = JObject.Parse(json);
             string data = (string)rss["results"][0][attribute];
-            string print = attribute + ": " + data;
-            return print;
+            return attribute + ": " + data;
         }
 
         //LinqJsonForOneRecord returns selected attributes of one record of the JsonRequest()

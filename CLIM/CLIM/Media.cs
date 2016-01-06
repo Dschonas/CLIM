@@ -8,8 +8,11 @@ namespace CLIM
 {
     class Media
     {
-        int mediaID, tracknumber, tracktime; //tracktime in milliseconds
-        String kindOfMedia, wrapperType, trackName, trackPrice, genre, trackViewLink, trackPreviewLink;
+        int mediaID, trackNumber;
+        decimal tracktime; //tracktime in milliseconds
+        String kindOfMedia, wrapperType, trackName, genre, trackViewLink, trackPreviewLink;
+        decimal trackPrice;
+        //wrappertype is either "track" or "podcast"
 
         public int MediaID
         {
@@ -24,20 +27,20 @@ namespace CLIM
             }
         }
 
-        public int Tracknumber
+        public int TrackNumber
         {
             get
             {
-                return tracknumber;
+                return trackNumber;
             }
 
             set
             {
-                tracknumber = value;
+                trackNumber = value;
             }
         }
 
-        public int Tracktime
+        public decimal Tracktime
         {
             get
             {
@@ -89,19 +92,6 @@ namespace CLIM
             }
         }
 
-        public string TrackPrice
-        {
-            get
-            {
-                return trackPrice;
-            }
-
-            set
-            {
-                trackPrice = value;
-            }
-        }
-
         public string Genre
         {
             get
@@ -138,6 +128,19 @@ namespace CLIM
             set
             {
                 trackPreviewLink = value;
+            }
+        }
+
+        public decimal TrackPrice
+        {
+            get
+            {
+                return trackPrice;
+            }
+
+            set
+            {
+                trackPrice = value;
             }
         }
     }

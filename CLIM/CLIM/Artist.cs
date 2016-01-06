@@ -11,6 +11,7 @@ namespace CLIM
         int artistID;
         String name, country, artistViewLink;
         List<Album> albumList = new List<Album>();
+        List<Media> songList = new List<Media>();
 
         public int ArtistID
         {
@@ -74,6 +75,19 @@ namespace CLIM
             set
             {
                 albumList = value;
+            }
+        }
+
+        internal List<Media> SongList
+        {
+            get
+            {
+                return songList;
+            }
+
+            set
+            {
+                songList = value;
             }
         }
     }
