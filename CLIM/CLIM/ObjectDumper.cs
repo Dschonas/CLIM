@@ -1,7 +1,5 @@
-// Comes from the LINQ samples provided by Microsoft
-
+//Comes from the LINQ samples provided by Microsoft
 //Copyright (C) Microsoft Corporation.  All rights reserved.
-
 using System;
 using System.IO;
 using System.Collections;

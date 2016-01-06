@@ -13,15 +13,12 @@ namespace CLIM
 {
     class InputHandler
     {
-
         //DESCRIPTION
-
-        //possible inputs
+        //Possible inputs
         //  - search
         //      - online    searches via the web URL
         //      - offline   searches via the provided offline XML file
-        //                  - the search term
-
+        //      - the search term
         //      - after you have searched, you can decide whether it is saved offline or not
 
         //PROPERTIES
@@ -48,20 +45,22 @@ namespace CLIM
                     case "search":
 
                         Console.WriteLine("Online or offline?");
-                        SearchTerm = Console.ReadLine();
+                        String choice = Console.ReadLine();
 
-                        if (SearchTerm.Equals("online"))
+                        if (choice.Equals("online"))
                             goto case "search online";
-                        if (SearchTerm.Equals("offline"))
+                        else if (choice.Equals("offline"))
                             goto case "search offline";
                         break;
 
                     case "search online":
 
-                        Console.WriteLine("Enter your search term: ");
+                        Console.WriteLine("Enter your search term:");
                         SearchTerm = Console.ReadLine();
 
-                        LinqJsonForOneRecord(JsonRequest(SearchTerm));
+                        string jsonSearch = JsonRequest(SearchTerm);
+                        Console.WriteLine("I found " + getNumberOfResults(jsonSearch) + " results!");
+                        LinqJsonForOneRecord(jsonSearch);
                         //Console.WriteLine(GetDataFromJson(3, "artistName", JsonRequest(SearchTerm)));
                         //Console.WriteLine(GetPrintedDataFromJson(3, "artistName", JsonRequest(SearchTerm)));
                         Console.ReadKey();
@@ -171,6 +170,13 @@ namespace CLIM
             ObjectDumper.Write(artistName);
             ObjectDumper.Write(country);
             ObjectDumper.Write(artistViewUrl);
+        }
+
+        //LinqJsonForOneRecord returns selected attributes of one record of the JsonRequest()
+        public string getNumberOfResults(string json)
+        {
+            JObject rss = JObject.Parse(json);
+            return (string)rss["resultCount"];
         }
 
         //diese Art der LINQ query funktioniert nicht --> genau genommen das select statement
