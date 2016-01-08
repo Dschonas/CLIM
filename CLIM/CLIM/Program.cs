@@ -7,7 +7,7 @@
     {
         static void Main(string[] args)
         {
-            new InputHandler();
+            new View();
         }
     }
 }

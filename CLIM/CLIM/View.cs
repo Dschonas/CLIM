@@ -13,7 +13,12 @@ namespace CLIM
 
         public View()
         {
+            Model = new Model();
+            Controller = new Controller(this.Model, this);
 
+            Controller.InputHandler();
         }
+
+        //every printouts
     }
 }
