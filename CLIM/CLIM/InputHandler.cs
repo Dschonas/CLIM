@@ -27,17 +27,18 @@ namespace CLIM
         //CONSTRUCTOR
         public InputHandler()
         {
+            Console.WriteLine("\nHello, I am CLIM");
+
             bool done = false;
             do
             {
-                Console.WriteLine("Hello, I am CLIRI");
-                Console.WriteLine("Possible commands:");
+                Console.WriteLine("\nPossible commands:");
                 Console.WriteLine("\t- search online (iTunes Database)");
                 Console.WriteLine("\t- search offline (the saved past searches)");
                 Console.WriteLine("\t- in future: delete history/to start a track of");
                 Console.WriteLine("\t  an artist/to open a preview pic of an artist");
 
-                Console.WriteLine("Type in \"end\" to close CLIRI.");
+                Console.WriteLine("Type in \"end\" to close CLIM.");
                 Console.WriteLine("So, what do you want to do?");
 
                 switch (Console.ReadLine().ToLower())
@@ -47,9 +48,9 @@ namespace CLIM
                         Console.WriteLine("Online or offline?");
                         String choice = Console.ReadLine();
 
-                        if (choice.Equals("online"))
+                        if (choice.ToLower().Equals("online"))
                             goto case "search online";
-                        else if (choice.Equals("offline"))
+                        else if (choice.ToLower().Equals("offline"))
                             goto case "search offline";
                         break;
 
@@ -63,42 +64,8 @@ namespace CLIM
                         //GetPrintedDataFromJson(0, "artistName", jsonSearch);
                         ObjectCreation oc = new ObjectCreation();
                         oc.createObjects(jsonSearch);
-                        if (oc.Artists.Count != 0)
-                        {
-                            if (oc.Artists.Count > 1)
-                                Console.WriteLine("I found " + oc.Artists.Count + " Artists based on your search!");
-                            else
-                                Console.WriteLine("I found one Artist based on your search!");
-
-                            foreach (Artist a in oc.Artists)
-                            {
-                                Console.WriteLine("Name: " + a.Name);
-                                Console.WriteLine("Country: " + a.Country);
-                                Console.WriteLine("Link: " + a.ArtistViewLink);
-                                Console.WriteLine("iTunes ID: " + a.ArtistID);
-                                Console.WriteLine("_______________________________________");
-                            }
-                        }
-                        if (oc.Medias.Count != 0)
-                        {
-                            if (oc.Medias.Count > 1)
-                                Console.WriteLine("I found " + oc.Medias.Count + " Songs or Podcasts based on your search!");
-                            else
-                                Console.WriteLine("I found one Song or Podcast based on your search!");
-                            
-                            foreach (Media m in oc.Medias)
-                            {
-                                Console.WriteLine("Type: " + m.KindOfMedia);
-                                Console.WriteLine("Name: " + m.TrackName);
-                                Console.WriteLine("Genre: " + m.Genre);
-                                Console.WriteLine("Number: " + m.TrackNumber);
-                                Console.WriteLine("Price: " + m.TrackPrice + "$");
-                                Console.WriteLine("Duration: " + (m.Tracktime/1000/60).ToString("F") + "min");
-                                Console.WriteLine("Link: " + m.TrackViewLink);
-                                Console.WriteLine("Song Preview: " + m.TrackPreviewLink);
-                                Console.WriteLine("_______________________________________");
-                            }
-                        }
+                        oc.PrintArtistResult();
+                        oc.PrintMediaResult();
                         //LinqJsonForOneRecord(jsonSearch);
                         Console.ReadKey();
                         
@@ -115,6 +82,11 @@ namespace CLIM
                         break;
 
                     case "test":
+                        XmlFileCreation x = new XmlFileCreation();
+                        x.CreateSample();
+                        break;
+
+                    case "test2":
 
                         string json = JsonRequest("Adele");
 
@@ -153,7 +125,7 @@ namespace CLIM
             //getting the response
             WebResponse response = request.GetResponse();
             //checking the status of the response
-            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+            //Console.WriteLine(((HttpWebResponse)response).StatusDescription);
             //returning the stream of the request
             Stream dataStream = response.GetResponseStream();
             //reading the dataStream
@@ -209,7 +181,7 @@ namespace CLIM
         }
 
         //LinqJsonForOneRecord returns selected attributes of one record of the JsonRequest()
-        public string getNumberOfResults(string json)
+        public string GetNumberOfResults(string json)
         {
             JObject rss = JObject.Parse(json);
             return (string)rss["resultCount"];
@@ -222,16 +194,7 @@ namespace CLIM
         //                    select new { (string)p["artistID"], (string)p["artistName"], (string)p["country"], (string)p["artistViewLink"] };
         //ObjectDumper.Write(listOfArtist);
 
-        public void QueryArtist()
-        {
-            
-        }
 
-        //TO XML SECTION
-        public void ConvertToXML()
-        {
-
-        }
 
         public void FirstMehod()
         {

@@ -94,5 +94,49 @@ namespace CLIM
                     Medias.Add(media);
                 }
         }
+
+        public void PrintArtistResult()
+        {
+            if (Artists.Count != 0)
+            {
+                if (Artists.Count > 1)
+                    Console.WriteLine("I found " + Artists.Count + " Artists based on your search!");
+                else
+                    Console.WriteLine("I found one Artist based on your search!");
+
+                foreach (Artist a in Artists)
+                {
+                    Console.WriteLine("Name: " + a.Name);
+                    Console.WriteLine("Country: " + a.Country);
+                    Console.WriteLine("Link: " + a.ArtistViewLink);
+                    Console.WriteLine("iTunes ID: " + a.ArtistID);
+                    Console.WriteLine("_______________________________________");
+                }
+            }
+        }
+
+        public void PrintMediaResult()
+        {
+            if (Medias.Count != 0)
+            {
+                if (Medias.Count > 1)
+                    Console.WriteLine("I found " + Medias.Count + " Songs or Podcasts based on your search!");
+                else
+                    Console.WriteLine("I found one Song or Podcast based on your search!");
+
+                foreach (Media m in Medias)
+                {
+                    Console.WriteLine("Type: " + m.KindOfMedia);
+                    Console.WriteLine("Name: " + m.TrackName);
+                    Console.WriteLine("Genre: " + m.Genre);
+                    Console.WriteLine("Number: " + m.TrackNumber);
+                    Console.WriteLine("Price: " + m.TrackPrice + "$");
+                    Console.WriteLine("Duration: " + (m.Tracktime / 1000 / 60).ToString("F") + "min");
+                    Console.WriteLine("Link: " + m.TrackViewLink);
+                    Console.WriteLine("Song Preview: " + m.TrackPreviewLink);
+                    Console.WriteLine("_______________________________________");
+                }
+            }
+        }
     }
 }
