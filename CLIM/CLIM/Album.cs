@@ -9,7 +9,7 @@ namespace CLIM
     class Album
     {
         int collectionID, trackCount;
-        String collectionName, currency, collectionViewLink, artworkLink;
+        string collectionName, currency, collectionViewLink, artworkLink;
         Decimal collectionPrice;
         DateTime releaseDate;
         List<Media> mediaList = new List<Media>();
@@ -23,7 +23,8 @@ namespace CLIM
 
             set
             {
-                collectionID = value;
+                if(value >= 0)
+                    collectionID = value;
             }
         }
 
@@ -36,7 +37,8 @@ namespace CLIM
 
             set
             {
-                trackCount = value;
+                if (value >= 0)
+                    trackCount = value;
             }
         }
 
@@ -49,7 +51,8 @@ namespace CLIM
 
             set
             {
-                collectionName = value;
+                if (value != null && value.Length > 0)
+                    collectionName = value;
             }
         }
 
@@ -62,7 +65,8 @@ namespace CLIM
 
             set
             {
-                releaseDate = value;
+                if(value != null)
+                    releaseDate = value;
             }
         }
 
@@ -75,7 +79,8 @@ namespace CLIM
 
             set
             {
-                collectionPrice = value;
+                if(value >= 0)
+                    collectionPrice = value;
             }
         }
 
@@ -88,7 +93,8 @@ namespace CLIM
 
             set
             {
-                currency = value;
+                if (value != null && value.Length > 0)
+                    currency = value;
             }
         }
 
@@ -101,7 +107,8 @@ namespace CLIM
 
             set
             {
-                mediaList = value;
+                if (value != null)
+                    mediaList = value;
             }
         }
 
@@ -114,7 +121,8 @@ namespace CLIM
 
             set
             {
-                collectionViewLink = value;
+                if (value != null && value.Length > 0)
+                    collectionViewLink = value;
             }
         }
 
@@ -127,8 +135,15 @@ namespace CLIM
 
             set
             {
-                artworkLink = value;
+                if (value != null && value.Length > 0)
+                    artworkLink = value;
             }
+        }
+
+        public int updateAndGetTrackCount()
+        {
+            TrackCount = MediaList.Count;
+            return TrackCount;
         }
     }
 }

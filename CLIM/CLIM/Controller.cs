@@ -65,6 +65,7 @@ namespace CLIM
                         break;
 
                     case "test":
+
                         Model.CreateSample();
                         break;
 
@@ -96,6 +97,7 @@ namespace CLIM
             //GetPrintedDataFromJson(0, "artistName", jsonSearch);
             Model.CreateObjects(jsonSearch);
             Model.PrintArtistResult();
+            Model.PrintAlbumResult();
             Model.PrintMediaResult();
             //LinqJsonForOneRecord(jsonSearch);
 

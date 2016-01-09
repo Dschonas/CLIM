@@ -22,7 +22,8 @@ namespace CLIM
 
             set
             {
-                artistID = value;
+                if (value >= 0)
+                    artistID = value;
             }
         }
 
@@ -35,7 +36,8 @@ namespace CLIM
 
             set
             {
-                name = value;
+                if (value != null && value.Length > 0)
+                    name = value;
             }
         }
 
@@ -48,7 +50,8 @@ namespace CLIM
 
             set
             {
-                country = value;
+                if (value != null && value.Length > 0)
+                    country = value;
             }
         }
 
@@ -61,7 +64,8 @@ namespace CLIM
 
             set
             {
-                artistViewLink = value;
+                if (value != null && value.Length > 0)
+                    artistViewLink = value;
             }
         }
 
@@ -74,7 +78,8 @@ namespace CLIM
 
             set
             {
-                albumList = value;
+                if (value != null && value.Any())
+                    albumList = value;
             }
         }
 
@@ -87,7 +92,8 @@ namespace CLIM
 
             set
             {
-                songList = value;
+                if (value != null && value.Any())
+                    songList = value;
             }
         }
     }

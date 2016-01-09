@@ -62,7 +62,8 @@ namespace CLIM
 
             set
             {
-                kind = value;
+                if (value != null && value.Length > 0)
+                    kind = value;
             }
         }
 
@@ -75,7 +76,8 @@ namespace CLIM
 
             set
             {
-                artistId = value;
+                if (value >= 0)
+                    artistId = value;
             }
         }
 
@@ -88,7 +90,8 @@ namespace CLIM
 
             set
             {
-                collectionId = value;
+                if (value >= 0)
+                    collectionId = value;
             }
         }
 
@@ -101,7 +104,8 @@ namespace CLIM
 
             set
             {
-                trackId = value;
+                if (value >= 0)
+                    trackId = value;
             }
         }
 
@@ -114,7 +118,8 @@ namespace CLIM
 
             set
             {
-                artistName = value;
+                if (value != null && value.Length > 0)
+                    artistName = value;
             }
         }
 
@@ -127,7 +132,8 @@ namespace CLIM
 
             set
             {
-                collectionName = value;
+                if (value != null && value.Length > 0)
+                    collectionName = value;
             }
         }
 
@@ -140,7 +146,8 @@ namespace CLIM
 
             set
             {
-                trackName = value;
+                if (value != null && value.Length > 0)
+                    trackName = value;
             }
         }
 
@@ -153,7 +160,8 @@ namespace CLIM
 
             set
             {
-                collectionCensoredName = value;
+                if (value != null && value.Length > 0)
+                    collectionCensoredName = value;
             }
         }
 
@@ -166,7 +174,8 @@ namespace CLIM
 
             set
             {
-                trackCensoredName = value;
+                if (value != null && value.Length > 0)
+                    trackCensoredName = value;
             }
         }
 
@@ -179,7 +188,8 @@ namespace CLIM
 
             set
             {
-                artistViewUrl = value;
+                if (value != null && value.Length > 0)
+                    artistViewUrl = value;
             }
         }
 
@@ -192,7 +202,8 @@ namespace CLIM
 
             set
             {
-                collectionViewUrl = value;
+                if (value != null && value.Length > 0)
+                    collectionViewUrl = value;
             }
         }
 
@@ -205,7 +216,8 @@ namespace CLIM
 
             set
             {
-                trackViewUrl = value;
+                if (value != null && value.Length > 0)
+                    trackViewUrl = value;
             }
         }
 
@@ -218,7 +230,8 @@ namespace CLIM
 
             set
             {
-                previewUrl = value;
+                if (value != null && value.Length > 0)
+                    previewUrl = value;
             }
         }
 
@@ -231,7 +244,8 @@ namespace CLIM
 
             set
             {
-                artworkUrl30 = value;
+                if (value != null && value.Length > 0)
+                    artworkUrl30 = value;
             }
         }
 
@@ -244,7 +258,8 @@ namespace CLIM
 
             set
             {
-                artworkUrl60 = value;
+                if (value != null && value.Length > 0)
+                    artworkUrl60 = value;
             }
         }
 
@@ -257,7 +272,8 @@ namespace CLIM
 
             set
             {
-                artworkUrl100 = value;
+                if (value != null && value.Length > 0)
+                    artworkUrl100 = value;
             }
         }
 
@@ -270,7 +286,8 @@ namespace CLIM
 
             set
             {
-                collectionPrice = value;
+                if (value >= 0)
+                    collectionPrice = value;
             }
         }
 
@@ -283,7 +300,8 @@ namespace CLIM
 
             set
             {
-                trackPrice = value;
+                if (value >= 0)
+                    trackPrice = value;
             }
         }
 
@@ -296,7 +314,8 @@ namespace CLIM
 
             set
             {
-                releaseDate = value;
+                if (value != null)
+                    releaseDate = value;
             }
         }
 
@@ -309,7 +328,8 @@ namespace CLIM
 
             set
             {
-                collectionExplicitness = value;
+                if (value != null && value.Length > 0)
+                    collectionExplicitness = value;
             }
         }
 
@@ -322,7 +342,8 @@ namespace CLIM
 
             set
             {
-                trackExplicitness = value;
+                if (value != null && value.Length > 0)
+                    trackExplicitness = value;
             }
         }
 
@@ -335,7 +356,8 @@ namespace CLIM
 
             set
             {
-                discCount = value;
+                if (value >= 0)
+                    discCount = value;
             }
         }
 
@@ -348,7 +370,8 @@ namespace CLIM
 
             set
             {
-                discNumber = value;
+                if (value >= 0)
+                    discNumber = value;
             }
         }
 
@@ -361,7 +384,8 @@ namespace CLIM
 
             set
             {
-                trackCount = value;
+                if (value >= 0)
+                    trackCount = value;
             }
         }
 
@@ -374,7 +398,8 @@ namespace CLIM
 
             set
             {
-                trackNumber = value;
+                if (value >= 0)
+                    trackNumber = value;
             }
         }
 
@@ -387,7 +412,8 @@ namespace CLIM
 
             set
             {
-                trackTimeMillis = value;
+                if (value >= 0)
+                    trackTimeMillis = value;
             }
         }
 
@@ -400,7 +426,8 @@ namespace CLIM
 
             set
             {
-                country = value;
+                if (value != null && value.Length > 0)
+                    country = value;
             }
         }
 
@@ -413,7 +440,8 @@ namespace CLIM
 
             set
             {
-                primaryGenreName = value;
+                if (value != null && value.Length > 0)
+                    primaryGenreName = value;
             }
         }
 
@@ -426,7 +454,8 @@ namespace CLIM
 
             set
             {
-                radioStationUrl = value;
+                if (value != null && value.Length > 0)
+                    radioStationUrl = value;
             }
         }
 
@@ -439,7 +468,8 @@ namespace CLIM
 
             set
             {
-                isStreamable = value;
+                if (value != null && value.Length > 0)
+                    isStreamable = value;
             }
         }
     }

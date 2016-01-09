@@ -18,14 +18,56 @@ namespace CLIM
     class Model
     {
 
-        internal List<Artist> Artists { get; set; }
+        private List<Artist> artists;
 
-        internal List<Media> Medias { get; set; }
+        private List<Media> medias;
+
+        private List<Album> albums;
+
+        internal List<Artist> Artists
+        {
+            get
+            {
+                return artists;
+            }
+
+            set
+            {
+                artists = value;
+            }
+        }
+
+        internal List<Media> Medias
+        {
+            get
+            {
+                return medias;
+            }
+
+            set
+            {
+                    medias = value;
+            }
+        }
+
+        internal List<Album> Albums
+        {
+            get
+            {
+                return albums;
+            }
+
+            set
+            {
+                    albums = value;
+            }
+        }
 
         public Model()
         {
             Artists = new List<Artist>();
             Medias = new List<Media>();
+            Albums = new List<Album>();
         }
 
 
@@ -116,33 +158,68 @@ namespace CLIM
                 Result searchResult = JsonConvert.DeserializeObject<Result>(result.ToString());
                 searchResults.Add(searchResult);
             }
+
             ArtistCreation(searchResults);
             MediaCreation(searchResults);
+            AlbumCreation(searchResults);
 
-            //Duplikate sollen rausgenommen werden
             Artists = Artists.GroupBy(x => x.ArtistID).Select(x => x.FirstOrDefault()).ToList<Artist>();
             Medias = Medias.GroupBy(x => x.MediaID).Select(x => x.FirstOrDefault()).ToList<Media>();
+            Albums = Albums.GroupBy(x => x.CollectionID).Select(x => x.FirstOrDefault()).ToList<Album>();
         }
 
         public void ArtistCreation(List<Result> searchQuery)
         {
-            foreach (Result r in searchQuery)
-            {
-                Artist artist = new Artist();
-                artist.ArtistID = r.ArtistId;
-                artist.ArtistViewLink = r.ArtistViewUrl;
-                artist.Country = r.Country;
-                artist.Name = r.ArtistName;
+            if(searchQuery != null)
+                foreach (Result r in searchQuery)
+                {
+                    Artist artist = new Artist();
+                    artist.ArtistID = r.ArtistId;
+                    artist.ArtistViewLink = r.ArtistViewUrl;
+                    artist.Country = r.Country;
+                    artist.Name = r.ArtistName;
+                
+                    if (!Artists.Contains(artist))
+                        Artists.Add(artist);
+                }
+        }
+        public void AlbumCreation(List<Result> searchQuery)
+        {
+            if(searchQuery != null)
+                foreach (Result r in searchQuery)
+                {
+                    Album album = new Album();
+                    album.ArtworkLink = r.ArtworkUrl100;
+                    album.CollectionID = r.CollectionId;
+                    album.CollectionName = r.CollectionName;
+                    album.CollectionPrice = r.CollectionPrice;
+                    album.CollectionViewLink = r.CollectionViewUrl;
+                    album.ReleaseDate = r.ReleaseDate;
+                    album.Currency = "USD";
+                    if(Medias != null)
+                        foreach (Media m in Medias)
+                        {
+                            if (m.CollectionName == album.CollectionName)
+                                album.MediaList.Add(m);
+                        }
 
-                //Wie es aussieht funktioniert diese if noch nicht
-                if (!Artists.Contains(artist))
-                    Artists.Add(artist);
-            }
+                    album.updateAndGetTrackCount();
+                    Albums.Add(album);
+                }
         }
 
         public void MediaCreation(List<Result> searchQuery)
         {
-            foreach (Result r in searchQuery)
+            if (searchQuery != null)
+                foreach (Result r in searchQuery)
+                    {
+                        Medias.Add(createMediaFromResult(r));
+                    }
+        }
+
+        public Media createMediaFromResult(Result r)
+        {
+            if(r != null)
             {
                 Media media = new Media();
                 media.MediaID = r.TrackId;
@@ -155,8 +232,12 @@ namespace CLIM
                 media.Tracktime = r.TrackTimeMillis;
                 media.TrackViewLink = r.TrackViewUrl;
                 media.WrapperType = r.WrapperType;
-                Medias.Add(media);
+                media.CollectionName = r.CollectionName;
+                media.ArtistId = r.ArtistId;
+                media.ArtistName= r.ArtistName;
+                return media;
             }
+            else return null;
         }
 
         public void PrintArtistResult()
@@ -164,17 +245,38 @@ namespace CLIM
             if (Artists.Count != 0)
             {
                 if (Artists.Count > 1)
-                    Console.WriteLine("I found " + Artists.Count + " Artists based on your search!");
+                    Console.WriteLine("\nI found " + Artists.Count + " Artists based on your search!\n");
                 else
-                    Console.WriteLine("I found one Artist based on your search!");
+                    Console.WriteLine("\nI found one Artist based on your search!\n");
 
                 foreach (Artist a in Artists)
                 {
                     Console.WriteLine("Name: " + a.Name);
                     Console.WriteLine("Country: " + a.Country);
                     Console.WriteLine("Link: " + a.ArtistViewLink);
-                    Console.WriteLine("iTunes ID: " + a.ArtistID);
-                    Console.WriteLine("_______________________________________");
+                    //Console.WriteLine("iTunes ID: " + a.ArtistID);
+                    Console.WriteLine("---------------------------------------");
+                }
+            }
+        }
+        public void PrintAlbumResult()
+        {
+            if (Albums.Count != 0)
+            {
+                if (Albums.Count > 1)
+                    Console.WriteLine("\nI found " + Albums.Count + " Albums based on your search!\n");
+                else
+                    Console.WriteLine("\nI found one Album based on your search!\n");
+
+                foreach (Album a in Albums)
+                {
+                    Console.WriteLine("Name: " + a.CollectionName);
+                    Console.WriteLine("Price: " + a.CollectionPrice + "USD");
+                    Console.WriteLine("Date: " + a.ReleaseDate);
+                    Console.WriteLine("Numer of Tracks:" + a.TrackCount);
+                    //Console.WriteLine("Link: " + a.CollectionViewLink);
+                    //Console.WriteLine("iTunes ID: " + a.CollectionID);
+                    Console.WriteLine("---------------------------------------");
                 }
             }
         }
@@ -184,9 +286,9 @@ namespace CLIM
             if (Medias.Count != 0)
             {
                 if (Medias.Count > 1)
-                    Console.WriteLine("I found " + Medias.Count + " Songs or Podcasts based on your search!");
+                    Console.WriteLine("\nI found " + Medias.Count + " Songs or Podcasts based on your search!\n");
                 else
-                    Console.WriteLine("I found one Song or Podcast based on your search!");
+                    Console.WriteLine("\nI found one Song or Podcast based on your search!\n");
 
                 foreach (Media m in Medias)
                 {
@@ -196,9 +298,10 @@ namespace CLIM
                     Console.WriteLine("Number: " + m.TrackNumber);
                     Console.WriteLine("Price: " + m.TrackPrice + "$");
                     Console.WriteLine("Duration: " + (m.Tracktime / 1000 / 60).ToString("F") + "min");
-                    Console.WriteLine("Link: " + m.TrackViewLink);
-                    Console.WriteLine("Song Preview: " + m.TrackPreviewLink);
-                    Console.WriteLine("_______________________________________");
+                    Console.WriteLine("Artist: " + m.ArtistName);
+                    //Console.WriteLine("Link: " + m.TrackViewLink);
+                    //Console.WriteLine("Song Preview: " + m.TrackPreviewLink);
+                    Console.WriteLine("---------------------------------------");
                 }
             }
         }
@@ -268,10 +371,6 @@ namespace CLIM
 
             xdoc.Save("..//..//clim_history.xml");
         }
-
-
-
-
 
         public void CreateHistoryNotUsed()
         {

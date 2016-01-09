@@ -8,11 +8,10 @@ namespace CLIM
 {
     class Media
     {
-        int mediaID, trackNumber;
+        int mediaID, trackNumber, artistId;
         decimal tracktime; //tracktime in milliseconds
-        String kindOfMedia, wrapperType, trackName, genre, trackViewLink, trackPreviewLink;
+        String kindOfMedia, wrapperType, trackName, genre, trackViewLink, trackPreviewLink, collectionName, artistName;
         decimal trackPrice;
-        //wrappertype is either "track" or "podcast"
 
         public int MediaID
         {
@@ -23,7 +22,8 @@ namespace CLIM
 
             set
             {
-                mediaID = value;
+                if (value >= 0)
+                    mediaID = value;
             }
         }
 
@@ -36,7 +36,8 @@ namespace CLIM
 
             set
             {
-                trackNumber = value;
+                if (value >= 0)
+                    trackNumber = value;
             }
         }
 
@@ -49,7 +50,8 @@ namespace CLIM
 
             set
             {
-                tracktime = value;
+                if (value >= 0)
+                    tracktime = value;
             }
         }
 
@@ -62,7 +64,8 @@ namespace CLIM
 
             set
             {
-                kindOfMedia = value;
+                if (value != null && value.Length > 0)
+                    kindOfMedia = value;
             }
         }
 
@@ -75,7 +78,8 @@ namespace CLIM
 
             set
             {
-                wrapperType = value;
+                if (value != null && value.Length > 0)
+                    wrapperType = value;
             }
         }
 
@@ -88,7 +92,8 @@ namespace CLIM
 
             set
             {
-                trackName = value;
+                if (value != null && value.Length > 0)
+                    trackName = value;
             }
         }
 
@@ -101,7 +106,8 @@ namespace CLIM
 
             set
             {
-                genre = value;
+                if (value != null && value.Length > 0)
+                    genre = value;
             }
         }
 
@@ -114,7 +120,8 @@ namespace CLIM
 
             set
             {
-                trackViewLink = value;
+                if (value != null && value.Length > 0)
+                    trackViewLink = value;
             }
         }
 
@@ -127,7 +134,8 @@ namespace CLIM
 
             set
             {
-                trackPreviewLink = value;
+                if (value != null && value.Length > 0)
+                    trackPreviewLink = value;
             }
         }
 
@@ -140,7 +148,50 @@ namespace CLIM
 
             set
             {
-                trackPrice = value;
+                if (value >= 0)
+                    trackPrice = value;
+            }
+        }
+
+        public string CollectionName
+        {
+            get
+            {
+                return collectionName;
+            }
+
+            set
+            {
+                if (value != null && value.Length > 0)
+                    collectionName = value;
+            }
+        }
+
+        public int ArtistId
+        {
+            get
+            {
+                return artistId;
+            }
+
+            set
+            {
+                if (value >= 0)
+                    artistId = value;
+            }
+        }
+
+        public string ArtistName
+        {
+            get
+            {
+                return artistName;
+            }
+
+            set
+            {
+                if (value != null && value.Length > 0)
+                    artistName = value;
             }
         }
     }

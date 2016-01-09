@@ -8,8 +8,34 @@ namespace CLIM
 {
     class View
     {
-        public Controller Controller { get; set; }
-        public Model Model { get; set; }
+        private Controller controller;
+        private Model model;
+
+        internal Controller Controller
+        {
+            get
+            {
+                return controller;
+            }
+
+            set
+            {
+                controller = value;
+            }
+        }
+
+        internal Model Model
+        {
+            get
+            {
+                return model;
+            }
+
+            set
+            {
+                model = value;
+            }
+        }
 
         public View()
         {
