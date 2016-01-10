@@ -8,7 +8,7 @@ namespace CLIM
 {
     class Media
     {
-        int mediaID, trackNumber, artistId;
+        int mediaID, trackNumber, artistId, collectionId;
         decimal tracktime; //tracktime in milliseconds
         String kindOfMedia, wrapperType, trackName, genre, trackViewLink, trackPreviewLink, collectionName, artistName;
         decimal trackPrice;
@@ -192,6 +192,20 @@ namespace CLIM
             {
                 if (value != null && value.Length > 0)
                     artistName = value;
+            }
+        }
+
+        public int CollectionId
+        {
+            get
+            {
+                return collectionId;
+            }
+
+            set
+            {
+                if (value >= 0)
+                    collectionId = value;
             }
         }
     }

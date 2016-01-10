@@ -235,6 +235,7 @@ namespace CLIM
                 media.CollectionName = r.CollectionName;
                 media.ArtistId = r.ArtistId;
                 media.ArtistName= r.ArtistName;
+                media.CollectionId = r.CollectionId;
                 return media;
             }
             else return null;
