@@ -271,7 +271,7 @@ namespace CLIM
                 foreach (Album a in Albums)
                 {
                     Console.WriteLine("Name: " + a.CollectionName);
-                    Console.WriteLine("Price: " + a.CollectionPrice + "USD");
+                    Console.WriteLine("Price: " + a.CollectionPrice + " USD");
                     Console.WriteLine("Date: " + a.ReleaseDate);
                     Console.WriteLine("Numer of Tracks:" + a.TrackCount);
                     //Console.WriteLine("Link: " + a.CollectionViewLink);
@@ -346,11 +346,16 @@ namespace CLIM
                                     new XElement("Country", artist.Country),
                                     new XElement("Link", artist.ArtistViewLink),
                                     new XElement("iTunesID", artist.ArtistID));
-                //foreach (var album in Albums)
-                //{
+                foreach (var album in Albums)
+                {
                 XElement xalbum = new XElement("Album",
-                                            new XElement("Name", "HELLO"));
-                foreach (var media in Medias)
+                                            new XElement("Name", album.CollectionName),
+                                            new XElement("Name", album.CollectionID),
+                                            new XElement("Name", album.CollectionPrice),
+                                            new XElement("Name", album.Currency),
+                                            new XElement("Name", album.ArtworkLink),
+                                            new XElement("Name", album.CollectionViewLink));
+                    foreach (var media in Medias)
                 {
                     XElement xsong = new XElement("Song",
                                                        new XElement("Type", media.WrapperType),
@@ -365,7 +370,7 @@ namespace CLIM
                     xalbum.Add(xsong);
                 }
                 xartist.Add(xalbum);
-                //}
+                }
                 xdoc.LoadXml(xartist.ToString());
             }
 
