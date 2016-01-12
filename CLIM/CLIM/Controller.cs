@@ -66,7 +66,8 @@ namespace CLIM
 
                     case "test":
 
-                        Model.CreateSample();
+                        Model.Artists.First().ToString();
+                        Model.Artists.Last().ToString();
                         break;
 
                     case "save":
