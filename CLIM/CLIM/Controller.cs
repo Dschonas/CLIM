@@ -22,25 +22,27 @@ namespace CLIM
 
         public void InputHandler()
         {
-            Console.WriteLine("\nHello, I am CLIM");
+            Console.WriteLine("\nHello, I am CLIM.");
+            Console.WriteLine("\nType 'help' for more information.");
+            
 
             bool done = false;
             do
             {
-                Console.WriteLine("\nPossible commands:");
-                Console.WriteLine("\t- search online (iTunes Database)");
-                Console.WriteLine("\t- search offline (the saved past searches)");
-                Console.WriteLine("\t- in future: delete history/to start a track of");
-                Console.WriteLine("\t  an artist/to open a preview pic of an artist");
-
-                Console.WriteLine("Type in \"end\" to close CLIM.");
-                Console.WriteLine("So, what do you want to do?");
+                Console.Write("\n#");
 
                 switch (Console.ReadLine().ToLower())
                 {
+
+                    case "help":
+
+                        ShowHelp();
+                        break;
+
                     case "search":
 
-                        Console.WriteLine("Online or offline?");
+                        Console.WriteLine("\nOnline or offline?");
+                        Console.Write("\n#search/");
                         String choice = Console.ReadLine();
 
                         if (choice.ToLower().Equals("online"))
@@ -59,7 +61,7 @@ namespace CLIM
                         SearchOffline();
                         break;
 
-                    case "end":
+                    case "exit":
 
                         done = true;
                         break;
@@ -88,9 +90,22 @@ namespace CLIM
         //Save
         //Delete
 
+        public void ShowHelp()
+        {
+            Console.WriteLine("\nSEARCH ONLINE \t Offers to search for the given term online");
+            Console.WriteLine("\t\t (iTunes Database).");
+            Console.WriteLine("SEARCH OFFLINE \t Offers to search for the given term based on your");
+            Console.WriteLine("\t\t past search history. (XML file)");
+            Console.WriteLine("DELETE \t\t Delete a certain artist, album, song or the whole history.");
+            Console.WriteLine("SAVE \t\t Stores your last search in a XML file.");
+            Console.WriteLine("START TRACK \t Starts a sample of a certain track.");
+            Console.WriteLine("OPEN ARTIST \t Opens a preview pic of an artist.\n");
+        }
+
         public void SearchOnline()
         {
-            Console.WriteLine("Enter your search term:");
+            Console.WriteLine("\nEnter your search term:");
+            Console.Write("\n#search/online/");
             SearchTerm = Console.ReadLine();
 
             string jsonSearch = Model.JsonRequest(SearchTerm);
@@ -103,7 +118,6 @@ namespace CLIM
             //LinqJsonForOneRecord(jsonSearch);
 
             //possible save commands
-            Console.ReadKey();
         }
 
         public void SearchOffline()
