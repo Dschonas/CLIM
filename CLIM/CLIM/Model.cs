@@ -18,50 +18,15 @@ namespace CLIM
     class Model
     {
 
-        private List<Artist> artists;
+        // List<Artist> artists;
+        //private List<Media> medias;
+        //private List<Album> albums;
 
-        private List<Media> medias;
+        internal List<Artist> Artists { get; set; }
+        internal List<Media> Medias { get; set; }
+        internal List<Album> Albums { get; set; }
 
-        private List<Album> albums;
 
-        internal List<Artist> Artists
-        {
-            get
-            {
-                return artists;
-            }
-
-            set
-            {
-                artists = value;
-            }
-        }
-
-        internal List<Media> Medias
-        {
-            get
-            {
-                return medias;
-            }
-
-            set
-            {
-                medias = value;
-            }
-        }
-
-        internal List<Album> Albums
-        {
-            get
-            {
-                return albums;
-            }
-
-            set
-            {
-                albums = value;
-            }
-        }
 
         public Model()
         {
@@ -179,9 +144,10 @@ namespace CLIM
                     artist.Country = r.Country;
                     artist.Name = r.ArtistName;
 
-                    if (!Artists.Contains(artist)) { 
+                    if (!Artists.Contains(artist))
+                    {
                         Artists.Add(artist);
-                        
+
                     }
                 }
         }
@@ -209,17 +175,16 @@ namespace CLIM
                     Albums.Add(album);
                 }
         }
-
         public void MediaCreation(List<Result> searchQuery)
         {
             if (searchQuery != null)
                 foreach (Result r in searchQuery)
                 {
-                    Medias.Add(createMediaFromResult(r));
+                    Medias.Add(CreateMediaFromResult(r));
                 }
         }
 
-        public Media createMediaFromResult(Result r)
+        public Media CreateMediaFromResult(Result r)
         {
             if (r != null)
             {
@@ -243,74 +208,117 @@ namespace CLIM
             else return null;
         }
 
-        public void PrintArtistResult()
+        public bool SaveHistory()
         {
             if (Artists.Count != 0)
             {
-                if (Artists.Count > 1)
-                    Console.WriteLine("\nI found " + Artists.Count + " Artists based on your search!\n");
-                else
-                    Console.WriteLine("\nI found one Artist based on your search!\n");
+                XmlDocument xdoc = new XmlDocument();
+                XElement xml = new XElement("XML");
 
-                foreach (Artist a in Artists)
+                foreach (var artist in Artists)
                 {
-                    Console.WriteLine("Name: " + a.Name);
-                    Console.WriteLine("Country: " + a.Country);
-                    Console.WriteLine("Link: " + a.ArtistViewLink);
-                    //Console.WriteLine("iTunes ID: " + a.ArtistID);
-                    Console.WriteLine("---------------------------------------");
+                    XElement xartist = new XElement("Artist",
+                                        new XElement("Name", artist.Name),
+                                        new XElement("Country", artist.Country),
+                                        new XElement("Link", artist.ArtistViewLink),
+                                        new XElement("iTunesID", artist.ArtistID));
+                    foreach (var album in Albums)
+                    {
+                        if (album.MediaList.First().ArtistName.Equals(artist.Name))
+                        {
+                            XElement xalbum = new XElement("Album",
+                                                        new XElement("Name", album.CollectionName),
+                                                        new XElement("ID", album.CollectionID),
+                                                        new XElement("Price", album.CollectionPrice),
+                                                        new XElement("Currency", album.Currency),
+                                                        new XElement("ArtworkLink", album.ArtworkLink),
+                                                        new XElement("Link", album.CollectionViewLink));
+
+                            foreach (var media in album.MediaList)
+                            {
+                                XElement xsong = new XElement("Song",
+                                                                   new XElement("Type", media.WrapperType),
+                                                                   new XElement("Name", media.TrackName),
+                                                                   new XElement("Genre", media.Genre),
+                                                                   new XElement("TrackNumber", media.TrackNumber),
+                                                                   new XElement("Price", media.TrackPrice),
+                                                                   new XElement("Duration", media.Tracktime),
+                                                                   new XElement("Link", media.TrackViewLink),
+                                                                   new XElement("Preview", media.TrackPreviewLink),
+                                                                   new XElement("AlbumName", media.CollectionName)
+                                                           );
+                                xalbum.Add(xsong);
+                            }
+                            xartist.Add(xalbum);
+                        }
+                    }
+                    xml.Add(xartist);
+                    xdoc.LoadXml(xml.ToString());
                 }
+                xdoc.Save("..//..//clim_history.xml");
+                return true;
             }
+            return false;
         }
-        public void PrintAlbumResult()
+
+        public bool SaveHistoryFinal()
         {
-            if (Albums.Count != 0)
+            if (Artists.Count != 0)
             {
-                if (Albums.Count > 1)
-                    Console.WriteLine("\nI found " + Albums.Count + " Albums based on your search!\n");
-                else
-                    Console.WriteLine("\nI found one Album based on your search!\n");
+                XmlDocument xdoc = new XmlDocument();
+                XElement xml = new XElement("XML");
 
-                foreach (Album a in Albums)
+                foreach (var artist in Artists)
                 {
-                    Console.WriteLine("Name: " + a.CollectionName);
-                    Console.WriteLine("Price: " + a.CollectionPrice + " USD");
-                    Console.WriteLine("Date: " + a.ReleaseDate);
-                    Console.WriteLine("Numer of Tracks:" + a.TrackCount);
-                    //Console.WriteLine("Link: " + a.CollectionViewLink);
-                    //Console.WriteLine("iTunes ID: " + a.CollectionID);
-                    Console.WriteLine("---------------------------------------");
+                    XElement xartist = new XElement("Artist",
+                                        new XAttribute("iTunesID", artist.ArtistID),
+                                        new XAttribute("Country", artist.Country),
+                                        new XAttribute("Name", artist.Name),
+                                        new XElement("Link", artist.ArtistViewLink)
+                                        );
+                    foreach (var album in Albums)
+                    {
+                        if (album.MediaList.Count != 0)
+                        {
+                            XElement xalbum = new XElement("Album",
+                                                        new XAttribute("Currency", album.Currency),
+                                                        new XAttribute("Price", album.CollectionPrice),
+                                                        new XAttribute("ID", album.CollectionID),
+                                                        new XAttribute("Name", album.CollectionName),
+                                                        new XElement("Link", album.CollectionViewLink),
+                                                        new XElement("ArtworkLink", album.ArtworkLink)
+                                                        );
+                            foreach (var media in album.MediaList)
+                            {
+                                XElement xsong = new XElement("Track",
+                                                                   new XElement("Song",
+                                                                   new XAttribute("AlbumName", media.CollectionName),
+                                                                   new XAttribute("Duration", media.Tracktime),
+                                                                   new XAttribute("Price", media.TrackPrice),
+                                                                   new XAttribute("TrackNumber", media.TrackNumber),
+                                                                   new XAttribute("Genre", media.Genre),
+                                                                   new XAttribute("Name", media.TrackName),
+                                                                   new XAttribute("Type", media.WrapperType),
+                                                                   new XElement("Link", media.TrackViewLink),
+                                                                   new XElement("Preview", media.TrackPreviewLink)
+                                                                   ));
+                                xalbum.Add(xsong);
+                            }
+                            xartist.Add(xalbum);
+                        }
+                    }
+                    xml.Add(xartist);
+                    xdoc.LoadXml(xml.ToString());
                 }
+                xdoc.Save("..//..//clim_history.xml");
+                return true;
             }
+            return false;
         }
 
-        public void PrintMediaResult()
-        {
-            if (Medias.Count != 0)
-            {
-                if (Medias.Count > 1)
-                    Console.WriteLine("\nI found " + Medias.Count + " Songs or Podcasts based on your search!\n");
-                else
-                    Console.WriteLine("\nI found one Song or Podcast based on your search!\n");
 
-                foreach (Media m in Medias)
-                {
-                    Console.WriteLine("Type: " + m.KindOfMedia);
-                    Console.WriteLine("Name: " + m.TrackName);
-                    Console.WriteLine("Genre: " + m.Genre);
-                    Console.WriteLine("Number: " + m.TrackNumber);
-                    Console.WriteLine("Price: " + m.TrackPrice + "$");
-                    Console.WriteLine("Duration: " + (m.Tracktime / 1000 / 60).ToString("F") + "min");
-                    Console.WriteLine("Artist: " + m.ArtistName);
-                    //Console.WriteLine("Link: " + m.TrackViewLink);
-                    //Console.WriteLine("Song Preview: " + m.TrackPreviewLink);
-                    Console.WriteLine("---------------------------------------");
-                }
-            }
-        }
 
-        //XML creation
-
+        //samples, UNUSED
         public void CreateSample()
         {
             XElement xel = new XElement("Artist",
@@ -337,56 +345,6 @@ namespace CLIM
 
             Console.WriteLine(xel.ToString());
         }
-
-        public void SaveHistory()
-        {
-            XmlDocument xdoc = new XmlDocument();
-
-            XElement xml = new XElement("XML");
-
-            foreach (var artist in Artists)
-            {
-                XElement xartist = new XElement("Artist",
-                                    new XElement("Name", artist.Name),
-                                    new XElement("Country", artist.Country),
-                                    new XElement("Link", artist.ArtistViewLink),
-                                    new XElement("iTunesID", artist.ArtistID));
-                foreach (var album in Albums)
-                {
-                    if (album.MediaList.First().ArtistName.Equals(artist.Name)) {
-                        XElement xalbum = new XElement("Album",
-                                                    new XElement("Name", album.CollectionName),
-                                                    new XElement("ID", album.CollectionID),
-                                                    new XElement("Price", album.CollectionPrice),
-                                                    new XElement("Currency", album.Currency),
-                                                    new XElement("ArtworkLink", album.ArtworkLink),
-                                                    new XElement("Link", album.CollectionViewLink));
-
-                        foreach (var media in album.MediaList)
-                        {
-                            XElement xsong = new XElement("Song",
-                                                               new XElement("Type", media.WrapperType),
-                                                               new XElement("Name", media.TrackName),
-                                                               new XElement("Genre", media.Genre),
-                                                               new XElement("TrackNumber", media.TrackNumber),
-                                                               new XElement("Price", media.TrackPrice),
-                                                               new XElement("Duration", media.Tracktime),
-                                                               new XElement("Link", media.TrackViewLink),
-                                                               new XElement("Preview", media.TrackPreviewLink),
-                                                               new XElement("AlbumName", media.CollectionName)
-                                                       );
-                            xalbum.Add(xsong);
-                        }
-                        xartist.Add(xalbum);
-                    }
-                }
-                xml.Add(xartist);
-                xdoc.LoadXml(xml.ToString());
-            }
-
-            xdoc.Save("..//..//clim_history.xml");
-        }
-
         public void CreateHistoryNotUsed()
         {
             for (int i = 0; i < Artists.Count(); i++)
@@ -416,7 +374,6 @@ namespace CLIM
                 xartist.Add(xalbum);
             }
         }
-
     }
 
 

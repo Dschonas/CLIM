@@ -53,6 +53,8 @@ namespace CLIM
             {
                 if (value != null && value.Length > 0)
                     collectionName = value;
+                else
+                    collectionName = "----";
             }
         }
 

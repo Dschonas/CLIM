@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace CLIM
         public View View { get; set; }
 
         public string SearchTerm { get; set; }
+        public string Postition { get; set; }
 
         public Controller(Model model, View view)
         {
@@ -24,40 +26,42 @@ namespace CLIM
         {
             Console.WriteLine("\nHello, I am CLIM.");
             Console.WriteLine("\nType 'help' for more information.");
-            
 
             bool done = false;
             do
             {
-                Console.Write("\n#");
+                Postition = "#";
+                Console.Write(Postition);
 
                 switch (Console.ReadLine().ToLower())
                 {
 
                     case "help":
 
-                        ShowHelp();
+                        View.ShowHelp();
                         break;
 
                     case "search":
 
-                        Console.WriteLine("\nOnline or offline?");
-                        Console.Write("\n#search/");
+                        Postition = "#search>";
+                        Console.Write(Postition);
                         String choice = Console.ReadLine();
-
                         if (choice.ToLower().Equals("online"))
                             goto case "search online";
                         else if (choice.ToLower().Equals("offline"))
                             goto case "search offline";
+
                         break;
 
                     case "search online":
 
+                        Postition = "#search>online>";
                         SearchOnline();
                         break;
 
                     case "search offline":
 
+                        Postition = "#search>offline>";
                         SearchOffline();
                         break;
 
@@ -68,18 +72,17 @@ namespace CLIM
 
                     case "test":
 
-                        Model.Artists.First().ToString();
-                        Model.Artists.Last().ToString();
+                        Console.WriteLine("Nothing to test atm.");
                         break;
 
                     case "save":
 
-                        Model.SaveHistory();
+                        Save();
                         break;
 
                     default:
 
-                        Console.WriteLine("This is not a valid command!");
+                        Console.Write("This is not a valid command\n");
                         break;
                 }
             }
@@ -90,31 +93,30 @@ namespace CLIM
         //Save
         //Delete
 
-        public void ShowHelp()
+
+
+        public void Save()
         {
-            Console.WriteLine("\nSEARCH ONLINE \t Offers to search for the given term online");
-            Console.WriteLine("\t\t (iTunes Database).");
-            Console.WriteLine("SEARCH OFFLINE \t Offers to search for the given term based on your");
-            Console.WriteLine("\t\t past search history. (XML file)");
-            Console.WriteLine("DELETE \t\t Delete a certain artist, album, song or the whole history.");
-            Console.WriteLine("SAVE \t\t Stores your last search in a XML file.");
-            Console.WriteLine("START TRACK \t Starts a sample of a certain track.");
-            Console.WriteLine("OPEN ARTIST \t Opens a preview pic of an artist.\n");
+            if (Model.SaveHistoryFinal())
+                Console.WriteLine("Saved successfully.");
+            else
+                Console.WriteLine("Nothing to save.");
+
         }
 
         public void SearchOnline()
         {
-            Console.WriteLine("\nEnter your search term:");
-            Console.Write("\n#search/online/");
+            //Console.WriteLine("\nEnter your search term:");
+            Console.Write(Postition);
             SearchTerm = Console.ReadLine();
 
             string jsonSearch = Model.JsonRequest(SearchTerm);
             //Console.WriteLine("I found " + getNumberOfResults(jsonSearch) + " results!");
             //GetPrintedDataFromJson(0, "artistName", jsonSearch);
             Model.CreateObjects(jsonSearch);
-            Model.PrintArtistResult();
-            Model.PrintAlbumResult();
-            Model.PrintMediaResult();
+            View.PrintArtistResult();
+            View.PrintAlbumResult();
+            View.PrintMediaResult();
             //LinqJsonForOneRecord(jsonSearch);
 
             //possible save commands
