@@ -381,7 +381,7 @@ namespace CLIM
                     }
                 }
                 xml.Add(xartist);
-                xdoc.LoadXml(xartist.ToString());
+                xdoc.LoadXml(xml.ToString());
             }
 
             xdoc.Save("..//..//clim_history.xml");
