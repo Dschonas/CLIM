@@ -17,7 +17,6 @@ namespace CLIM
     //ObjectCreation
     class Model
     {
-
         // List<Artist> artists;
         //private List<Media> medias;
         //private List<Album> albums;
@@ -316,7 +315,12 @@ namespace CLIM
             return false;
         }
 
+        public void XmlQuery()
+        {
+            XElement xel = XElement.Load("..//..//clim_history.xml");
 
+            
+        }
 
         //samples, UNUSED
         public void CreateSample()

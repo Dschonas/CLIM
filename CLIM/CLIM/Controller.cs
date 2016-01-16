@@ -72,7 +72,7 @@ namespace CLIM
 
                     case "test":
 
-                        Console.WriteLine("Nothing to test atm.");
+                        Model.XmlQuery();
                         break;
 
                     case "save":
