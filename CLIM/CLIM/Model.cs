@@ -5,8 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -265,41 +263,41 @@ namespace CLIM
             if (Artists.Count != 0)
             {
                 XmlDocument xdoc = new XmlDocument();
-                XElement xml = new XElement("XML");
+                XElement xml = new XElement("xml");
 
                 foreach (var artist in Artists)
                 {
-                    XElement xartist = new XElement("Artist",
-                                        new XAttribute("iTunesID", artist.ArtistID),
-                                        new XAttribute("Country", artist.Country),
-                                        new XAttribute("Name", artist.Name),
-                                        new XElement("Link", artist.ArtistViewLink)
+                    XElement xartist = new XElement("artist",
+                                        new XAttribute("itunesid", artist.ArtistID),
+                                        new XAttribute("country", artist.Country),
+                                        new XAttribute("name", artist.Name),
+                                        new XElement("link", artist.ArtistViewLink)
                                         );
                     foreach (var album in Albums)
                     {
                         if (album.MediaList.Count != 0)
                         {
-                            XElement xalbum = new XElement("Album",
-                                                        new XAttribute("Currency", album.Currency),
-                                                        new XAttribute("Price", album.CollectionPrice),
-                                                        new XAttribute("ID", album.CollectionID),
-                                                        new XAttribute("Name", album.CollectionName),
-                                                        new XElement("Link", album.CollectionViewLink),
-                                                        new XElement("ArtworkLink", album.ArtworkLink)
+                            XElement xalbum = new XElement("album",
+                                                        new XAttribute("currency", album.Currency),
+                                                        new XAttribute("price", album.CollectionPrice),
+                                                        new XAttribute("id", album.CollectionID),
+                                                        new XAttribute("name", album.CollectionName),
+                                                        new XElement("link", album.CollectionViewLink),
+                                                        new XElement("artworklink", album.ArtworkLink)
                                                         );
                             foreach (var media in album.MediaList)
                             {
-                                XElement xsong = new XElement("Track",
-                                                                   new XElement("Song",
-                                                                   new XAttribute("AlbumName", media.CollectionName),
-                                                                   new XAttribute("Duration", media.Tracktime),
-                                                                   new XAttribute("Price", media.TrackPrice),
-                                                                   new XAttribute("TrackNumber", media.TrackNumber),
-                                                                   new XAttribute("Genre", media.Genre),
-                                                                   new XAttribute("Name", media.TrackName),
-                                                                   new XAttribute("Type", media.WrapperType),
-                                                                   new XElement("Link", media.TrackViewLink),
-                                                                   new XElement("Preview", media.TrackPreviewLink)
+                                XElement xsong = new XElement("track",
+                                                                   new XElement("song",
+                                                                   new XAttribute("albumname", media.CollectionName),
+                                                                   new XAttribute("duration", media.Tracktime),
+                                                                   new XAttribute("price", media.TrackPrice),
+                                                                   new XAttribute("tracknumber", media.TrackNumber),
+                                                                   new XAttribute("genre", media.Genre),
+                                                                   new XAttribute("name", media.TrackName),
+                                                                   new XAttribute("type", media.WrapperType),
+                                                                   new XElement("link", media.TrackViewLink),
+                                                                   new XElement("preview", media.TrackPreviewLink)
                                                                    ));
                                 xalbum.Add(xsong);
                             }
@@ -315,11 +313,73 @@ namespace CLIM
             return false;
         }
 
-        public void XmlQuery()
+        public void XmlQuery(string attribute, string term)
         {
             XElement xel = XElement.Load("..//..//clim_history.xml");
 
-            
+            var query =
+                    from x in xel.Descendants("artist")
+                    where x.Attribute(attribute).Value.Equals(term)
+                    select new
+                    {
+                        Name = x.Attribute("name").Value,
+                        Country = x.Attribute("country").Value,
+                        iTunesID = x.Attribute("itunesid").Value
+                    };
+            ObjectDumper.Write(query);
+        }
+
+        public void XmlQueryArtist(string attribute, string term)
+        {
+            XElement xel = XElement.Load("..//..//clim_history.xml");
+
+            var query =
+                    from x in xel.Descendants("artist")
+                    where x.Attribute(attribute).Value.Equals(term)
+                    select new
+                    {
+                        Name = x.Attribute("name").Value,
+                        Country = x.Attribute("country").Value,
+                        iTunesID = x.Attribute("itunesid").Value
+                    };
+            ObjectDumper.Write(query);
+        }
+
+        public void XmlQueryAlbum(string attribute, string term)
+        {
+            XElement xel = XElement.Load("..//..//clim_history.xml");
+
+            var query =
+                    from x in xel.Descendants("album")
+                    where x.Attribute(attribute).Value.Equals(term)
+                    select new
+                    {
+                        Name = x.Attribute("name").Value,
+                        ID = x.Attribute("country").Value,
+                        Price = x.Attribute("price").Value,
+                        Currency = x.Attribute("currncy").Value
+                    };
+            ObjectDumper.Write(query);
+        }
+
+        public void XmlQuerySong(string attribute, string term)
+        {
+            XElement xel = XElement.Load("..//..//clim_history.xml");
+
+            var query =
+                    from x in xel.Descendants("song")
+                    where x.Attribute(attribute).Value.Equals(term)
+                    select new
+                    {
+                        Name = x.Attribute("name").Value,
+                        Price = x.Attribute("price").Value,
+                        Type = x.Attribute("type").Value,
+                        Genre = x.Attribute("genre").Value,
+                        TrackNumber = x.Attribute("tracknumber").Value,
+                        Duration = x.Attribute("duration").Value,
+                        AlbumName = x.Attribute("albumname").Value
+                    };
+            ObjectDumper.Write(query);
         }
 
         //samples, UNUSED

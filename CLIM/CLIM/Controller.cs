@@ -72,7 +72,7 @@ namespace CLIM
 
                     case "test":
 
-                        Model.XmlQuery();
+                        Model.XmlQueryArtist("name", "adele");
                         break;
 
                     case "save":
@@ -124,7 +124,44 @@ namespace CLIM
 
         public void SearchOffline()
         {
+            Console.Write(Postition);
+            Console.WriteLine("\nArtist, Album or Song?");
+            switch (Console.ReadLine().ToLower())
+            {
+                case "artist":
+                    Postition = "#search>offline>artist>";
+                    Console.WriteLine("\nThe attribute you wanna search for.");
+                    Console.Write(Postition);
+                    string attribute = Console.ReadLine().ToLower();
+                    Postition = "#search>offline>artist>" + attribute+">";
+                    Console.Write(Postition);
+                    string term = Console.ReadLine();
+                    string queryTerm = term.First().ToString().ToUpper()+term.Substring(1);
+                    Model.XmlQueryArtist(attribute, queryTerm);
+                    break;
 
+                case "album":
+                    Model.XmlQueryAlbum("","");
+                    break;
+
+                case "song":
+                    Model.XmlQuerySong("", "");
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        public void SearchArtist()
+        {
+            switch (Console.ReadLine().ToLower())
+            {
+
+
+                default:
+                    break;
+            }
         }
     }
 }
