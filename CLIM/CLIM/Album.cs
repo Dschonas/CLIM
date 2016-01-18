@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CLIM
 {
-    class Album
+    public class Album
     {
         int collectionID, trackCount;
         string collectionName, currency, collectionViewLink, artworkLink;
@@ -100,7 +100,7 @@ namespace CLIM
             }
         }
 
-        internal List<Media> MediaList
+        public List<Media> MediaList
         {
             get
             {
@@ -110,7 +110,10 @@ namespace CLIM
             set
             {
                 if (value != null)
+                {
                     mediaList = value;
+                    updateTrackCount();
+                }
             }
         }
 
@@ -142,10 +145,9 @@ namespace CLIM
             }
         }
 
-        public int updateAndGetTrackCount()
+        public void updateTrackCount()
         {
             TrackCount = MediaList.Count;
-            return TrackCount;
         }
     }
 }

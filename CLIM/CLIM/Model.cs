@@ -13,7 +13,7 @@ namespace CLIM
     //WebRequest
     //JSON query
     //ObjectCreation
-    class Model
+    public class Model
     {
         // List<Artist> artists;
         //private List<Media> medias;
@@ -167,8 +167,8 @@ namespace CLIM
                             if (m.CollectionName == album.CollectionName)
                                 album.MediaList.Add(m);
                         }
+                    album.updateTrackCount();
 
-                    album.updateAndGetTrackCount();
                     Albums.Add(album);
                 }
         }

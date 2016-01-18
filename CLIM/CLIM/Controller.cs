@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CLIM
 {
-    class Controller
+    public class Controller
     {
         public Model Model { get; set; }
         public View View { get; set; }

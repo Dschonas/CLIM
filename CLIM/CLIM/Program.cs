@@ -3,7 +3,7 @@
     //general notes
     //  - case sensetive
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

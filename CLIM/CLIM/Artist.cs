@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CLIM
 {
-    class Artist
+    public class Artist
     {
         int artistID;
         String name, country, artistViewLink;
@@ -69,7 +69,7 @@ namespace CLIM
             }
         }
 
-        internal List<Album> AlbumList
+        public List<Album> AlbumList
         {
             get
             {
@@ -83,7 +83,7 @@ namespace CLIM
             }
         }
 
-        internal List<Media> SongList
+        public List<Media> SongList
         {
             get
             {

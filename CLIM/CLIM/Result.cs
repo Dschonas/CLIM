@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CLIM
 {
-    class Result
+    public class Result
     {
         string wrapperType;
         string kind;

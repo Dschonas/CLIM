@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CLIM
 {
-    class View
+    public class View
     {
         private Controller controller;
         private Model model;
@@ -47,6 +47,8 @@ namespace CLIM
 
         public void ShowHelp()
         {
+
+            Console.WriteLine(default(int));
             Console.WriteLine("\nSEARCH ONLINE \t Offers to search for the given term online");
             Console.WriteLine("\t\t (iTunes Database).");
             Console.WriteLine("SEARCH OFFLINE \t Offers to search for the given term based on your");

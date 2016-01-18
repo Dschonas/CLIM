@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CLIM
 {
-    class Media
+    public class Media
     {
         int mediaID, trackNumber, artistId, collectionId;
         decimal tracktime; //tracktime in milliseconds
