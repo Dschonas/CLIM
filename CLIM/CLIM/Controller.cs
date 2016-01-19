@@ -14,7 +14,7 @@ namespace CLIM
         private View view;
 
         public string SearchTerm { get; set; }
-        public string Postition { get; set; }
+        public string Position { get; set; }
 
         public Model Model
         {
@@ -52,14 +52,14 @@ namespace CLIM
 
         public void InputHandler()
         {
-            Console.WriteLine("\nHello, I am CLIM.");
-            Console.WriteLine("\nType 'help' for more information.");
+            View.Advisor("\nHello, I am CLIM.");
+            View.Advisor("\nType 'help' for more information.");
 
             bool done = false;
             do
             {
-                Postition = "#";
-                Console.Write(Postition);
+                Position = "#";
+                View.InputLine(Position);
 
                 switch (Console.ReadLine().ToLower())
                 {
@@ -71,8 +71,9 @@ namespace CLIM
 
                     case "search":
 
-                        Postition = "#search>";
-                        Console.Write(Postition);
+                        Position = "#search>";
+                        View.Advisor("Online or offline?");
+                        View.InputLine(Position);
                         String choice = Console.ReadLine();
                         if (choice.ToLower().Equals("online"))
                             goto case "search online";
@@ -83,13 +84,13 @@ namespace CLIM
 
                     case "search online":
 
-                        Postition = "#search>online>";
+                        Position = "#search>online>";
                         SearchOnline();
                         break;
 
                     case "search offline":
 
-                        Postition = "#search>offline>";
+                        Position = "#search>offline>";
                         SearchOffline();
                         break;
 
@@ -101,6 +102,8 @@ namespace CLIM
                     case "test":
 
                         Model.XmlQueryArtist("name", "adele");
+                        Model.XmlQueryAlbum("name", "25");
+                        Model.XmlQuerySong("name", "Hello");
                         break;
 
                     case "save":
@@ -110,7 +113,7 @@ namespace CLIM
 
                     default:
 
-                        Console.Write("This is not a valid command\n");
+                        View.ErrorMessage("This is not a valid command\n");
                         break;
                 }
             }
@@ -123,16 +126,16 @@ namespace CLIM
         public void Save()
         {
             if (Model.SaveHistoryFinal())
-                Console.WriteLine("Saved successfully.");
+                View.Advisor("Saved successfully.");
             else
-                Console.WriteLine("Nothing to save.");
+                View.Advisor("Nothing to save.");
 
         }
 
         public void SearchOnline()
         {
             //Console.WriteLine("\nEnter your search term:");
-            Console.Write(Postition);
+            View.InputLine(Position);
             SearchTerm = Console.ReadLine();
 
             string jsonSearch = Model.JsonRequest(SearchTerm);
@@ -149,28 +152,20 @@ namespace CLIM
 
         public void SearchOffline()
         {
-            Console.Write(Postition);
-            Console.WriteLine("\nArtist, Album or Song?");
+            View.Advisor("\nArtist, Album or Song?");
+            View.InputLine(Position);
             switch (Console.ReadLine().ToLower())
             {
                 case "artist":
-                    Postition = "#search>offline>artist>";
-                    Console.WriteLine("\nThe attribute you wanna search for.");
-                    Console.Write(Postition);
-                    string attribute = Console.ReadLine().ToLower();
-                    Postition = "#search>offline>artist>" + attribute + ">";
-                    Console.Write(Postition);
-                    string term = Console.ReadLine();
-                    string queryTerm = term.First().ToString().ToUpper() + term.Substring(1);
-                    Model.XmlQueryArtist(attribute, queryTerm);
+                    SearchOfflineArtist();
                     break;
 
                 case "album":
-                    Model.XmlQueryAlbum("", "");
+                    SearchOfflineAlbum();
                     break;
 
                 case "song":
-                    Model.XmlQuerySong("", "");
+                    SearchOfflineSong();
                     break;
 
                 default:
@@ -178,12 +173,103 @@ namespace CLIM
             }
         }
 
-        public void SearchArtist()
+        public void SearchOfflineArtist()
         {
-            switch (Console.ReadLine().ToLower())
+            Position = "#search>offline>artist>";
+            View.Advisor("\nThe attribute and the value you wanna search for.('help' for possible attributes)");
+            View.InputLine(Position);
+            string attribute = Console.ReadLine().ToLower();
+
+            if (attribute.Equals("help"))
             {
-                default: break;
+                View.ShowHelpOfflineArtistOutput();
+                View.InputLine(Position);
+                attribute = Console.ReadLine().ToLower();
             }
+
+            if (!View.ShowHelpOfflineSong().Contains(attribute) || attribute == "")
+            {
+                View.ErrorMessage("The attribute " + attribute + " was not found!");
+                return;
+            }
+
+            View.Advisor("\nThe term you want to search for.");
+            Position = "#search>offline>artist>" + attribute + ">";
+            View.InputLine(Position);
+            string term = Console.ReadLine();
+
+            if (term == null || term == "" || term == " ")
+                return;
+
+            string queryTerm = term.First().ToString().ToUpper() + term.Substring(1);
+            Model.XmlQueryArtist(attribute, queryTerm);
+        }
+
+        public void SearchOfflineAlbum()
+        {
+            Position = "#search>offline>album>";
+            View.Advisor("\nThe attribute and the value.");
+            View.InputLine(Position);
+            string attribute = Console.ReadLine().ToLower();
+
+            if (attribute.Equals("help"))
+            {
+                View.ShowHelpOfflineAlbumOutput();
+                View.InputLine(Position);
+                attribute = Console.ReadLine().ToLower();
+            }
+
+            if (!View.ShowHelpOfflineSong().Contains(attribute) || attribute == "")
+            {
+                View.ErrorMessage("The attribute " + attribute + " was not found!");
+                return;
+            }
+
+            View.Advisor("\nThe term you want to search for.");
+            Position = "#search>offline>album>" + attribute + ">";
+            View.InputLine(Position);
+            string term = Console.ReadLine();
+
+            if (term == null || term == "" || term == " ")
+                return;
+
+            string queryTerm = term.First().ToString().ToUpper() + term.Substring(1);
+            Model.XmlQueryAlbum(attribute, queryTerm);
+        }
+
+        public void SearchOfflineSong()
+        {
+            Position = "#search>offline>song>";
+            View.Advisor("\nThe attribute you want to search for.");
+            View.InputLine(Position);
+            string attribute = Console.ReadLine().ToLower();
+
+            if (attribute.Equals("help"))
+            {
+                View.ShowHelpOfflineSongOutput();
+                View.InputLine(Position);
+                attribute = Console.ReadLine().ToLower();
+            }
+
+            if (!View.ShowHelpOfflineSong().Contains(attribute) || attribute == "")
+            {
+                View.ErrorMessage("The attribute " + attribute + " was not found!");
+                return;
+            }
+
+            View.Advisor("\nThe term you want to search for.");
+            Position = "#search>offline>song>" + attribute + ">";
+            View.InputLine(Position);
+            string term = Console.ReadLine();
+
+            if (term == "")
+            {
+                View.ErrorMessage("Invalid search term!");
+                return;
+            }
+
+            string queryTerm = term.First().ToString().ToUpper() + term.Substring(1);
+            Model.XmlQuerySong(attribute, queryTerm);
         }
     }
 }

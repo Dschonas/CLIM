@@ -305,9 +305,9 @@ namespace CLIM
                 foreach (var artist in Artists)
                 {
                     XElement xartist = new XElement("artist",
-                                        new XAttribute("itunesid", artist.ArtistID),
-                                        new XAttribute("country", artist.Country),
                                         new XAttribute("name", artist.Name),
+                                        new XAttribute("country", artist.Country),
+                                        new XAttribute("itunesid", artist.ArtistID),
                                         new XElement("link", artist.ArtistViewLink)
                                         );
                     foreach (var album in Albums)
@@ -315,10 +315,10 @@ namespace CLIM
                         if (album.MediaList.Count != 0)
                         {
                             XElement xalbum = new XElement("album",
-                                                        new XAttribute("currency", album.Currency),
-                                                        new XAttribute("price", album.CollectionPrice),
-                                                        new XAttribute("id", album.CollectionID),
                                                         new XAttribute("name", album.CollectionName),
+                                                        new XAttribute("id", album.CollectionID),
+                                                        new XAttribute("price", album.CollectionPrice),
+                                                        new XAttribute("currency", album.Currency),
                                                         new XElement("link", album.CollectionViewLink),
                                                         new XElement("artworklink", album.ArtworkLink)
                                                         );
@@ -326,13 +326,13 @@ namespace CLIM
                             {
                                 XElement xsong = new XElement("track",
                                                                    new XElement("song",
-                                                                   new XAttribute("albumname", media.CollectionName),
-                                                                   new XAttribute("duration", media.Tracktime),
-                                                                   new XAttribute("price", media.TrackPrice),
-                                                                   new XAttribute("tracknumber", media.TrackNumber),
-                                                                   new XAttribute("genre", media.Genre),
-                                                                   new XAttribute("name", media.TrackName),
                                                                    new XAttribute("type", media.WrapperType),
+                                                                   new XAttribute("name", media.TrackName),
+                                                                   new XAttribute("genre", media.Genre),
+                                                                   new XAttribute("tracknumber", media.TrackNumber),
+                                                                   new XAttribute("price", media.TrackPrice),
+                                                                   new XAttribute("duration", media.Tracktime),
+                                                                   new XAttribute("albumname", media.CollectionName),
                                                                    new XElement("link", media.TrackViewLink),
                                                                    new XElement("preview", media.TrackPreviewLink)
                                                                    ));
@@ -392,9 +392,8 @@ namespace CLIM
                     select new
                     {
                         Name = x.Attribute("name").Value,
-                        ID = x.Attribute("country").Value,
                         Price = x.Attribute("price").Value,
-                        Currency = x.Attribute("currncy").Value
+                        Currency = x.Attribute("currency").Value
                     };
             ObjectDumper.Write(query);
         }
