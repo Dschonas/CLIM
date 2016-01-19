@@ -47,7 +47,6 @@ namespace CLIM
 
         public void ShowHelp()
         {
-
             Console.WriteLine(default(int));
             Console.WriteLine("\nSEARCH ONLINE \t Offers to search for the given term online");
             Console.WriteLine("\t\t (iTunes Database).");

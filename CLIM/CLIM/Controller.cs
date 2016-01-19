@@ -10,11 +10,39 @@ namespace CLIM
 {
     public class Controller
     {
-        public Model Model { get; set; }
-        public View View { get; set; }
+        private Model model;
+        private View view;
 
         public string SearchTerm { get; set; }
         public string Postition { get; set; }
+
+        public Model Model
+        {
+            get
+            {
+                return model;
+            }
+
+            set
+            {
+                if (value != null)
+                    model = value;
+            }
+        }
+
+        public View View
+        {
+            get
+            {
+                return view;
+            }
+
+            set
+            {
+                if (value != null)
+                    view = value;
+            }
+        }
 
         public Controller(Model model, View view)
         {
@@ -92,9 +120,6 @@ namespace CLIM
 
         //Save
         //Delete
-
-
-
         public void Save()
         {
             if (Model.SaveHistoryFinal())
@@ -133,15 +158,15 @@ namespace CLIM
                     Console.WriteLine("\nThe attribute you wanna search for.");
                     Console.Write(Postition);
                     string attribute = Console.ReadLine().ToLower();
-                    Postition = "#search>offline>artist>" + attribute+">";
+                    Postition = "#search>offline>artist>" + attribute + ">";
                     Console.Write(Postition);
                     string term = Console.ReadLine();
-                    string queryTerm = term.First().ToString().ToUpper()+term.Substring(1);
+                    string queryTerm = term.First().ToString().ToUpper() + term.Substring(1);
                     Model.XmlQueryArtist(attribute, queryTerm);
                     break;
 
                 case "album":
-                    Model.XmlQueryAlbum("","");
+                    Model.XmlQueryAlbum("", "");
                     break;
 
                 case "song":
@@ -157,10 +182,7 @@ namespace CLIM
         {
             switch (Console.ReadLine().ToLower())
             {
-
-
-                default:
-                    break;
+                default: break;
             }
         }
     }

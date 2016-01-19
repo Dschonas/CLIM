@@ -8,14 +8,9 @@ namespace CLIM
 {
     public class Result
     {
-        string wrapperType;
-        string kind;
-        int artistId;
-        int collectionId;
-        int trackId;
-        string artistName;
-        string collectionName;
-        string trackName;
+        string wrapperType, kind;
+        int artistId, collectionId, trackId;
+        string artistName, collectionName, trackName;
         string collectionCensoredName;
         string trackCensoredName;
         string artistViewUrl;

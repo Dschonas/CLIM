@@ -9,7 +9,7 @@ namespace TestCLIM
     public class UnitTest
     {
         [TestMethod]
-        public void TestAlbum_TestInserts_AllPassed()
+        public void TestAlbum_TestInserts_AllPass()
         {
             Album a = new Album();
             a.ArtworkLink = "Link";
@@ -33,7 +33,7 @@ namespace TestCLIM
             Assert.AreEqual(a.CollectionPrice, 0);
         }
         [TestMethod]
-        public void TestArtist_TestInserts_AllPassed()
+        public void TestArtist_TestInserts_AllPass()
         {
             Artist ar = new Artist();
             ar.ArtistID = 1;
@@ -46,11 +46,10 @@ namespace TestCLIM
             lm.Add(me);
             lm.Add(me);
             lm.Add(me);
-            lm.Add(me);
 
             ar.SongList = lm;
 
-            List <Album> la = new List<Album>();
+            List<Album> la = new List<Album>();
 
             Album a = new Album();
             a.ArtworkLink = "Link";
@@ -67,10 +66,41 @@ namespace TestCLIM
             la.Add(a);
             la.Add(a);
             la.Add(a);
-            
+
             ar.AlbumList = la;
 
             Assert.IsNotNull(ar);
+        }
+
+        [TestMethod]
+        public void TestController_TestInserts_AllPass()
+        {
+            Controller c = new Controller(null, null);
+
+            Assert.IsNull(c.Model);
+        }
+
+        [TestMethod]
+        public void TestMedia_TestInserts_AllPass()
+        {
+            Media m = new Media();
+
+            m.ArtistId = -124;
+            m.ArtistName = "Artist Name";
+            m.CollectionName = "Collection Name";
+            m.MediaID = -3;
+
+            Assert.AreEqual(m.ArtistId, 0);
+            Assert.AreEqual(m.MediaID, 0);
+            Assert.IsNotNull(m);
+        }
+
+        [TestMethod]
+        //[ExpectedException(typeof(ArgumentNullException))]
+        public void TestModel_CreateObjects_Success()
+        {
+            Model m = new Model();
+            m.CreateObjects(null); //Doesn't fail because of the try() and catch() in the method
         }
     }
 }

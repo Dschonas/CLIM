@@ -23,7 +23,7 @@ namespace CLIM
 
             set
             {
-                if(value >= 0)
+                if (value >= 0)
                     collectionID = value;
             }
         }
@@ -67,7 +67,7 @@ namespace CLIM
 
             set
             {
-                if(value != null)
+                if (value != null)
                     releaseDate = value;
             }
         }
@@ -81,7 +81,7 @@ namespace CLIM
 
             set
             {
-                if(value >= 0)
+                if (value >= 0)
                     collectionPrice = value;
             }
         }

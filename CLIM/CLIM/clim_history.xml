@@ -1,0 +1,323 @@
+<XML>
+  <Artist iTunesID="262836961" Country="USA" Name="Adele">
+    <Link>https://itunes.apple.com/us/artist/adele/id262836961?uo=4</Link>
+    <Album Currency="USD" Price="10.99" ID="1051394208" Name="25">
+      <Link>https://itunes.apple.com/us/album/hello/id1051394208?i=1051394215&amp;uo=4</Link>
+      <ArtworkLink>http://is5.mzstatic.com/image/thumb/Music6/v4/8c/91/5d/8c915d9b-d9e4-f735-1b91-81ca1b6e6312/source/100x100bb.jpg</ArtworkLink>
+      <Track>
+        <Song AlbumName="25" Duration="295502" Price="1.29" TrackNumber="1" Genre="Pop" Name="Hello" Type="track">
+          <Link>https://itunes.apple.com/us/album/hello/id1051394208?i=1051394215&amp;uo=4</Link>
+          <Preview>http://a1912.phobos.apple.com/us/r1000/170/Music6/v4/68/34/f1/6834f1f8-8fdb-4247-492a-c0caea580082/mzaf_3920281300599106672.plus.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="25" Duration="290900" Price="1.29" TrackNumber="4" Genre="Pop" Name="When We Were Young" Type="track">
+          <Link>https://itunes.apple.com/us/album/when-we-were-young/id1051394208?i=1051394224&amp;uo=4</Link>
+          <Preview>http://a937.phobos.apple.com/us/r1000/140/Music69/v4/ec/41/49/ec4149fb-0268-5334-41c5-63ed909edf9a/mzaf_8940070516580294462.plus.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="25" Duration="240439" Price="1.29" TrackNumber="6" Genre="Pop" Name="Water Under the Bridge" Type="track">
+          <Link>https://itunes.apple.com/us/album/water-under-the-bridge/id1051394208?i=1051394813&amp;uo=4</Link>
+          <Preview>http://a1354.phobos.apple.com/us/r1000/121/Music69/v4/86/6d/b6/866db603-024a-e82a-976f-d443a623a8c3/mzaf_122905703155999864.plus.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="25" Duration="227066" Price="1.29" TrackNumber="9" Genre="Pop" Name="Million Years Ago" Type="track">
+          <Link>https://itunes.apple.com/us/album/million-years-ago/id1051394208?i=1051394816&amp;uo=4</Link>
+          <Preview>http://a1097.phobos.apple.com/us/r1000/146/Music69/v4/27/ae/a6/27aea65c-bcba-3753-f622-64a9424e7ed1/mzaf_8457035217812911151.plus.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="25" Duration="223079" Price="1.29" TrackNumber="2" Genre="Pop" Name="Send My Love (To Your New Lover)" Type="track">
+          <Link>https://itunes.apple.com/us/album/send-my-love-to-your-new-lover/id1051394208?i=1051394219&amp;uo=4</Link>
+          <Preview>http://a1673.phobos.apple.com/us/r1000/156/Music69/v4/d6/19/7f/d6197fe1-629b-96a2-a0d0-34cf7f968538/mzaf_6123298197326321883.plus.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="25" Duration="245427" Price="1.29" TrackNumber="5" Genre="Pop" Name="Remedy" Type="track">
+          <Link>https://itunes.apple.com/us/album/remedy/id1051394208?i=1051394227&amp;uo=4</Link>
+          <Preview>http://a107.phobos.apple.com/us/r1000/130/Music69/v4/0f/f8/3f/0ff83fb7-ad94-76a0-1192-d0262a28c1a9/mzaf_127888539772639743.plus.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="25" Duration="271800" Price="1.29" TrackNumber="10" Genre="Pop" Name="All I Ask" Type="track">
+          <Link>https://itunes.apple.com/us/album/all-i-ask/id1051394208?i=1051394817&amp;uo=4</Link>
+          <Preview>http://a803.phobos.apple.com/us/r1000/158/Music69/v4/d4/a1/07/d4a1076a-3636-7791-2401-698330e7a26d/mzaf_3982126671713878425.plus.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="25" Duration="251702" Price="1.29" TrackNumber="11" Genre="Pop" Name="Sweetest Devotion" Type="track">
+          <Link>https://itunes.apple.com/us/album/sweetest-devotion/id1051394208?i=1051394818&amp;uo=4</Link>
+          <Preview>http://a634.phobos.apple.com/us/r1000/125/Music69/v4/7d/99/10/7d991060-d791-6f59-f8e5-7b91ede6437c/mzaf_7195640508619449109.plus.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="25" Duration="225427" Price="1.29" TrackNumber="7" Genre="Pop" Name="River Lea" Type="track">
+          <Link>https://itunes.apple.com/us/album/river-lea/id1051394208?i=1051394814&amp;uo=4</Link>
+          <Preview>http://a540.phobos.apple.com/us/r1000/145/Music69/v4/69/ff/a6/69ffa690-ecd3-23da-c248-5833ee491384/mzaf_3965204635845819459.plus.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="25" Duration="285935" Price="1.29" TrackNumber="8" Genre="Pop" Name="Love in the Dark" Type="track">
+          <Link>https://itunes.apple.com/us/album/love-in-the-dark/id1051394208?i=1051394815&amp;uo=4</Link>
+          <Preview>http://a1309.phobos.apple.com/us/r1000/154/Music69/v4/69/fd/cb/69fdcb3b-33c5-e070-a7fd-0a45a2151956/mzaf_8137432081882847786.plus.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="25" Duration="348625" Price="1.29" TrackNumber="3" Genre="Pop" Name="I Miss You" Type="track">
+          <Link>https://itunes.apple.com/us/album/i-miss-you/id1051394208?i=1051394223&amp;uo=4</Link>
+          <Preview>http://a1107.phobos.apple.com/us/r1000/141/Music69/v4/10/83/6d/10836d17-ce50-9c84-347e-9b2001887489/mzaf_4158565161536648299.plus.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+    </Album>
+    <Album Currency="USD" Price="10.99" ID="420075073" Name="21">
+      <Link>https://itunes.apple.com/us/album/rolling-in-the-deep/id420075073?i=420075084&amp;uo=4</Link>
+      <ArtworkLink>http://is5.mzstatic.com/image/thumb/Music/v4/cf/7e/47/cf7e47a8-bb18-9156-43d0-7591d0e0855e/source/100x100bb.jpg</ArtworkLink>
+      <Track>
+        <Song AlbumName="21" Duration="228293" Price="1.29" TrackNumber="1" Genre="Pop" Name="Rolling in the Deep" Type="track">
+          <Link>https://itunes.apple.com/us/album/rolling-in-the-deep/id420075073?i=420075084&amp;uo=4</Link>
+          <Preview>http://a818.phobos.apple.com/us/r1000/115/Music/3d/fd/74/mzm.dqadcdcf.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="21" Duration="241693" Price="1.29" TrackNumber="5" Genre="Pop" Name="Set Fire to the Rain" Type="track">
+          <Link>https://itunes.apple.com/us/album/set-fire-to-the-rain/id420075073?i=420075145&amp;uo=4</Link>
+          <Preview>http://a940.phobos.apple.com/us/r1000/095/Music/23/9d/ac/mzm.brtdpcie.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="21" Duration="283960" Price="1.29" TrackNumber="11" Genre="Pop" Name="Someone Like You" Type="track">
+          <Link>https://itunes.apple.com/us/album/someone-like-you/id420075073?i=420075185&amp;uo=4</Link>
+          <Preview>http://a1074.phobos.apple.com/us/r1000/092/Music/71/b2/95/mzm.mxaodkka.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="21" Duration="223267" Price="1.29" TrackNumber="2" Genre="Pop" Name="Rumour Has It" Type="track">
+          <Link>https://itunes.apple.com/us/album/rumour-has-it/id420075073?i=420075085&amp;uo=4</Link>
+          <Preview>http://a559.phobos.apple.com/us/r1000/091/Music/05/c0/f2/mzm.wsjnqdix.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="21" Duration="250133" Price="1.29" TrackNumber="3" Genre="Pop" Name="Turning Tables" Type="track">
+          <Link>https://itunes.apple.com/us/album/turning-tables/id420075073?i=420075087&amp;uo=4</Link>
+          <Preview>http://a182.phobos.apple.com/us/r1000/096/Music/6a/89/5f/mzm.kqtahmcf.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="21" Duration="348160" Price="1.29" TrackNumber="9" Genre="Pop" Name="One and Only" Type="track">
+          <Link>https://itunes.apple.com/us/album/one-and-only/id420075073?i=420075170&amp;uo=4</Link>
+          <Preview>http://a1915.phobos.apple.com/us/r1000/062/Music/25/60/98/mzm.xmqvsqpf.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="21" Duration="316440" Price="1.29" TrackNumber="10" Genre="Pop" Name="Lovesong" Type="track">
+          <Link>https://itunes.apple.com/us/album/lovesong/id420075073?i=420075180&amp;uo=4</Link>
+          <Preview>http://a909.phobos.apple.com/us/r1000/106/Music/16/fa/d6/mzm.yokqzntm.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="21" Duration="243200" Price="1.29" TrackNumber="4" Genre="Pop" Name="Don't You Remember" Type="track">
+          <Link>https://itunes.apple.com/us/album/dont-you-remember/id420075073?i=420075124&amp;uo=4</Link>
+          <Preview>http://a78.phobos.apple.com/us/r1000/107/Music/2d/dc/14/mzm.idkuhokr.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="21" Duration="228213" Price="1.29" TrackNumber="7" Genre="Pop" Name="Take It All" Type="track">
+          <Link>https://itunes.apple.com/us/album/take-it-all/id420075073?i=420075155&amp;uo=4</Link>
+          <Preview>http://a1903.phobos.apple.com/us/r1000/108/Music/b5/95/66/mzm.earcymxk.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="21" Duration="241653" Price="1.29" TrackNumber="8" Genre="Pop" Name="I'll Be Waiting" Type="track">
+          <Link>https://itunes.apple.com/us/album/ill-be-waiting/id420075073?i=420075159&amp;uo=4</Link>
+          <Preview>http://a91.phobos.apple.com/us/r1000/111/Music/c6/a3/a6/mzm.qbiofloi.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="21" Duration="277947" Price="1.29" TrackNumber="6" Genre="Pop" Name="He Won't Go" Type="track">
+          <Link>https://itunes.apple.com/us/album/he-wont-go/id420075073?i=420075147&amp;uo=4</Link>
+          <Preview>http://a664.phobos.apple.com/us/r1000/117/Music/7b/5e/96/mzm.rrxjqipf.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="21" Duration="216907" Price="0" TrackNumber="12" Genre="Pop" Name="I Found a Boy" Type="track">
+          <Link>https://itunes.apple.com/us/album/i-found-a-boy/id420075073?i=420075192&amp;uo=4</Link>
+          <Preview>http://a1243.phobos.apple.com/us/r1000/074/Music/9a/98/81/mzm.vhwdgmvx.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+    </Album>
+    <Album Currency="USD" Price="1.29" ID="566322358" Name="Skyfall - Single">
+      <Link>https://itunes.apple.com/us/album/skyfall/id566322358?i=566322365&amp;uo=4</Link>
+      <ArtworkLink>http://is2.mzstatic.com/image/thumb/Music/v4/0d/23/c1/0d23c1dd-9dbf-eb1e-f5c8-c39823942d5f/source/100x100bb.jpg</ArtworkLink>
+      <Track>
+        <Song AlbumName="Skyfall - Single" Duration="286082" Price="1.29" TrackNumber="1" Genre="Pop" Name="Skyfall" Type="track">
+          <Link>https://itunes.apple.com/us/album/skyfall/id566322358?i=566322365&amp;uo=4</Link>
+          <Preview>http://a238.phobos.apple.com/us/r1000/066/Music/5b/47/e6/mzm.ecgpmndl.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+    </Album>
+    <Album Currency="USD" Price="9.99" ID="282374043" Name="19">
+      <Link>https://itunes.apple.com/us/album/make-you-feel-my-love/id282374043?i=282374076&amp;uo=4</Link>
+      <ArtworkLink>http://is4.mzstatic.com/image/thumb/Music/v4/2c/40/16/2c4016cd-2ebf-cf05-3436-c0d1af5e065e/source/100x100bb.jpg</ArtworkLink>
+      <Track>
+        <Song AlbumName="19" Duration="212040" Price="1.29" TrackNumber="9" Genre="Pop" Name="Make You Feel My Love" Type="track">
+          <Link>https://itunes.apple.com/us/album/make-you-feel-my-love/id282374043?i=282374076&amp;uo=4</Link>
+          <Preview>http://a477.phobos.apple.com/us/r1000/030/Music/ff/50/c8/mzm.mpcralym.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="19" Duration="210507" Price="1.29" TrackNumber="3" Genre="Pop" Name="Chasing Pavements" Type="track">
+          <Link>https://itunes.apple.com/us/album/chasing-pavements/id282374043?i=282374069&amp;uo=4</Link>
+          <Preview>http://a256.phobos.apple.com/us/r1000/040/Music/cb/6f/cf/mzm.xecinnoy.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="19" Duration="271227" Price="1.29" TrackNumber="12" Genre="Pop" Name="Hometown Glory" Type="track">
+          <Link>https://itunes.apple.com/us/album/hometown-glory/id282374043?i=282374081&amp;uo=4</Link>
+          <Preview>http://a1271.phobos.apple.com/us/r1000/044/Music/a3/94/dd/mzm.unhskrsm.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="19" Duration="195653" Price="1.29" TrackNumber="10" Genre="Pop" Name="My Same" Type="track">
+          <Link>https://itunes.apple.com/us/album/my-same/id282374043?i=282374077&amp;uo=4</Link>
+          <Preview>http://a1956.phobos.apple.com/us/r1000/000/Music/f4/7b/02/mzm.faicujsi.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="19" Duration="220507" Price="1.29" TrackNumber="1" Genre="Pop" Name="Daydreamer" Type="track">
+          <Link>https://itunes.apple.com/us/album/daydreamer/id282374043?i=282374066&amp;uo=4</Link>
+          <Preview>http://a645.phobos.apple.com/us/r1000/019/Music/12/7d/2e/mzm.syuzpyel.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="19" Duration="191867" Price="1.29" TrackNumber="4" Genre="Pop" Name="Cold Shoulder" Type="track">
+          <Link>https://itunes.apple.com/us/album/cold-shoulder/id282374043?i=282374070&amp;uo=4</Link>
+          <Preview>http://a1053.phobos.apple.com/us/r1000/029/Music/67/4a/2b/mzm.jppeqmhb.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="19" Duration="197347" Price="1.29" TrackNumber="8" Genre="Pop" Name="Right as Rain" Type="track">
+          <Link>https://itunes.apple.com/us/album/right-as-rain/id282374043?i=282374075&amp;uo=4</Link>
+          <Preview>http://a1511.phobos.apple.com/us/r1000/032/Music/72/4f/30/mzm.lejxsnhk.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="19" Duration="258507" Price="1.29" TrackNumber="2" Genre="Pop" Name="Best for Last" Type="track">
+          <Link>https://itunes.apple.com/us/album/best-for-last/id282374043?i=282374067&amp;uo=4</Link>
+          <Preview>http://a1358.phobos.apple.com/us/r1000/013/Music/f3/59/20/mzm.ugtvueou.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="19" Duration="190280" Price="1.29" TrackNumber="7" Genre="Pop" Name="First Love" Type="track">
+          <Link>https://itunes.apple.com/us/album/first-love/id282374043?i=282374073&amp;uo=4</Link>
+          <Preview>http://a178.phobos.apple.com/us/r1000/016/Music/98/c1/9e/mzm.xtoqardf.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="19" Duration="258853" Price="1.29" TrackNumber="11" Genre="Pop" Name="Tired" Type="track">
+          <Link>https://itunes.apple.com/us/album/tired/id282374043?i=282374080&amp;uo=4</Link>
+          <Preview>http://a698.phobos.apple.com/us/r1000/056/Music/8d/c9/bf/mzm.kotbolid.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="19" Duration="208040" Price="1.29" TrackNumber="5" Genre="Pop" Name="Crazy for You" Type="track">
+          <Link>https://itunes.apple.com/us/album/crazy-for-you/id282374043?i=282374071&amp;uo=4</Link>
+          <Preview>http://a510.phobos.apple.com/us/r1000/042/Music/44/ba/b5/mzm.lsmhfnqr.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="19" Duration="179145" Price="1.99" TrackNumber="13" Genre="Pop" Name="Melt My Heart to Stone" Type="track">
+          <Link>https://itunes.apple.com/us/music-video/melt-my-heart-to-stone/id282374082?uo=4</Link>
+          <Preview>http://a102.v.phobos.apple.com/us/r1000/123/Video2/v4/6c/b1/14/6cb11447-2666-56a4-3e6e-9352933d7135/mzvf_576548912245576818.640x464.h264lc.U.p.m4v</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="19" Duration="203907" Price="1.29" TrackNumber="6" Genre="Pop" Name="Melt My Heart to Stone" Type="track">
+          <Link>https://itunes.apple.com/us/album/melt-my-heart-to-stone/id282374043?i=282374072&amp;uo=4</Link>
+          <Preview>http://a260.phobos.apple.com/us/r1000/012/Music/d9/96/dd/mzm.skdxrcdi.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+    </Album>
+    <Album Currency="USD" Price="5.99" ID="450329290" Name="iTunes Festival: London 2011 - EP">
+      <Link>https://itunes.apple.com/us/album/i-cant-make-you-love-me-live/id450329290?i=450329334&amp;uo=4</Link>
+      <ArtworkLink>http://is4.mzstatic.com/image/thumb/Music/v4/2f/59/91/2f59913e-e1f9-5757-02c6-ff6afd9baad5/source/100x100bb.jpg</ArtworkLink>
+      <Track>
+        <Song AlbumName="iTunes Festival: London 2011 - EP" Duration="214240" Price="1.29" TrackNumber="5" Genre="Pop" Name="I Can't Make You Love Me" Type="track">
+          <Link>https://itunes.apple.com/us/album/i-cant-make-you-love-me-live/id450329290?i=450329334&amp;uo=4</Link>
+          <Preview>http://a106.phobos.apple.com/us/r1000/090/Music/93/69/e3/mzm.iehqrksd.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="iTunes Festival: London 2011 - EP" Duration="321747" Price="1.29" TrackNumber="6" Genre="Pop" Name="Rolling in the Deep" Type="track">
+          <Link>https://itunes.apple.com/us/album/rolling-in-the-deep-live/id450329290?i=450329363&amp;uo=4</Link>
+          <Preview>http://a1760.phobos.apple.com/us/r1000/103/Music/c6/85/9e/mzm.fctbigie.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="iTunes Festival: London 2011 - EP" Duration="242307" Price="1.29" TrackNumber="4" Genre="Pop" Name="Take It All" Type="track">
+          <Link>https://itunes.apple.com/us/album/take-it-all-live/id450329290?i=450329333&amp;uo=4</Link>
+          <Preview>http://a1496.phobos.apple.com/us/r1000/066/Music/9d/c6/62/mzm.qsrzulvh.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="iTunes Festival: London 2011 - EP" Duration="343933" Price="1.29" TrackNumber="1" Genre="Pop" Name="One and Only" Type="track">
+          <Link>https://itunes.apple.com/us/album/one-and-only-live/id450329290?i=450329292&amp;uo=4</Link>
+          <Preview>http://a215.phobos.apple.com/us/r1000/116/Music/19/22/6e/mzm.enlmzbcp.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="iTunes Festival: London 2011 - EP" Duration="228027" Price="1.29" TrackNumber="3" Genre="Pop" Name="Rumour Has It" Type="track">
+          <Link>https://itunes.apple.com/us/album/rumour-has-it-live/id450329290?i=450329308&amp;uo=4</Link>
+          <Preview>http://a1196.phobos.apple.com/us/r1000/094/Music/16/cb/01/mzm.refnhmgv.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+    </Album>
+    <Album Currency="USD" Price="7.99" ID="303197123" Name="iTunes Live from SoHo">
+      <Link>https://itunes.apple.com/us/album/make-you-feel-my-love-live/id303197123?i=303197129&amp;uo=4</Link>
+      <ArtworkLink>http://is2.mzstatic.com/image/thumb/Music/v4/53/cd/ec/53cdec98-3641-c500-582c-c731f1408a04/source/100x100bb.jpg</ArtworkLink>
+      <Track>
+        <Song AlbumName="iTunes Live from SoHo" Duration="253653" Price="1.29" TrackNumber="3" Genre="Pop" Name="Make You Feel My Love" Type="track">
+          <Link>https://itunes.apple.com/us/album/make-you-feel-my-love-live/id303197123?i=303197129&amp;uo=4</Link>
+          <Preview>http://a1201.phobos.apple.com/us/r1000/109/Music/87/02/a8/mzm.ljwokqka.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="iTunes Live from SoHo" Duration="143933" Price="1.29" TrackNumber="8" Genre="Pop" Name="That's It, I Quit, I'm Moving On" Type="track">
+          <Link>https://itunes.apple.com/us/album/thats-it-i-quit-im-moving/id303197123?i=303197134&amp;uo=4</Link>
+          <Preview>http://a33.phobos.apple.com/us/r1000/092/Music/4f/05/34/mzm.xtoycppz.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="iTunes Live from SoHo" Duration="150360" Price="1.29" TrackNumber="7" Genre="Pop" Name="Fool That I Am" Type="track">
+          <Link>https://itunes.apple.com/us/album/fool-that-i-am-live/id303197123?i=303197133&amp;uo=4</Link>
+          <Preview>http://a1208.phobos.apple.com/us/r1000/089/Music/76/b2/d0/mzm.andqryqy.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="iTunes Live from SoHo" Duration="227240" Price="1.29" TrackNumber="6" Genre="Pop" Name="Chasing Pavements" Type="track">
+          <Link>https://itunes.apple.com/us/album/chasing-pavements-live/id303197123?i=303197132&amp;uo=4</Link>
+          <Preview>http://a1804.phobos.apple.com/us/r1000/090/Music/a8/bb/5e/mzm.brtqjxqy.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="iTunes Live from SoHo" Duration="275000" Price="1.29" TrackNumber="1" Genre="Pop" Name="Crazy for You" Type="track">
+          <Link>https://itunes.apple.com/us/album/crazy-for-you-live/id303197123?i=303197127&amp;uo=4</Link>
+          <Preview>http://a899.phobos.apple.com/us/r1000/112/Music/a5/50/94/mzm.tpjfqmrj.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="iTunes Live from SoHo" Duration="222053" Price="1.29" TrackNumber="2" Genre="Pop" Name="Right As Rain" Type="track">
+          <Link>https://itunes.apple.com/us/album/right-as-rain-live/id303197123?i=303197128&amp;uo=4</Link>
+          <Preview>http://a1056.phobos.apple.com/us/r1000/083/Music/a8/1c/0f/mzm.qtuzgged.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+      <Track>
+        <Song AlbumName="iTunes Live from SoHo" Duration="237827" Price="1.29" TrackNumber="5" Genre="Pop" Name="Hometown Glory" Type="track">
+          <Link>https://itunes.apple.com/us/album/hometown-glory-live/id303197123?i=303197131&amp;uo=4</Link>
+          <Preview>http://a1083.phobos.apple.com/us/r1000/063/Music/82/15/03/mzm.dltppjrr.aac.p.m4a</Preview>
+        </Song>
+      </Track>
+    </Album>
+  </Artist>
+</XML>

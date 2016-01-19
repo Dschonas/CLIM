@@ -15,15 +15,9 @@ namespace CLIM
     //ObjectCreation
     public class Model
     {
-        // List<Artist> artists;
-        //private List<Media> medias;
-        //private List<Album> albums;
-
         internal List<Artist> Artists { get; set; }
         internal List<Media> Medias { get; set; }
         internal List<Album> Albums { get; set; }
-
-
 
         public Model()
         {
@@ -38,19 +32,27 @@ namespace CLIM
         //Requests the Json file with the URL
         public string JsonRequest(string searchTerm)
         {
-            //request from the URL
-            WebRequest request = WebRequest.Create("https://itunes.apple.com/search?term=" + searchTerm);
-            //getting the response
-            WebResponse response = request.GetResponse();
-            //checking the status of the response
-            //Console.WriteLine(((HttpWebResponse)response).StatusDescription);
-            //returning the stream of the request
-            Stream dataStream = response.GetResponseStream();
-            //reading the dataStream
-            StreamReader reader = new StreamReader(dataStream);
-            string dataFromURL = reader.ReadToEnd();
+            try
+            {
+                //request from the URL
+                WebRequest request = WebRequest.Create("https://itunes.apple.com/search?term=" + searchTerm);
+                //getting the response
+                WebResponse response = request.GetResponse();
+                //checking the status of the response
+                //Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+                //returning the stream of the request
+                Stream dataStream = response.GetResponseStream();
+                //reading the dataStream
+                StreamReader reader = new StreamReader(dataStream);
+                string dataFromURL = reader.ReadToEnd();
 
-            return dataFromURL;
+                return dataFromURL;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
         }
 
         //Fetches the necessary and returns data from the JSON
@@ -59,75 +61,110 @@ namespace CLIM
         //  - json              the json file of the searched term
         public string GetDataFromJson(int numberOfRecord, string attribute, string json)
         {
-            JObject rss = JObject.Parse(json);
-            string data = (string)rss["results"][0][attribute];
-            return data;
+            try
+            {
+                JObject rss = JObject.Parse(json);
+                string data = (string)rss["results"][0][attribute];
+                return data;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
         }
 
         public string GetPrintedDataFromJson(int numberOfRecord, string attribute, string json)
         {
-            JObject rss = JObject.Parse(json);
-            string data = (string)rss["results"][0][attribute];
-            return attribute + ": " + data;
+            try
+            {
+                JObject rss = JObject.Parse(json);
+                string data = (string)rss["results"][0][attribute];
+                return attribute + ": " + data;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
         }
 
         //LinqJsonForOneRecord returns selected attributes of one record of the JsonRequest()
         public void LinqJsonForOneRecord(string json)
         {
-            JObject rss = JObject.Parse(json);
+            try
+            {
+                JObject rss = JObject.Parse(json);
 
-            var artistId =
-                            from p in rss["results"]
-                            select (string)p["trackName"];
+                var artistId = from p in rss["results"]
+                               select (string)p["trackName"];
 
-            var artistName =
-                            from p in rss["results"]
-                            select (string)p["artistName"];
+                var artistName = from p in rss["results"]
+                                 select (string)p["artistName"];
 
-            var country =
-                            from p in rss["results"]
-                            select (string)p["country"];
+                var country = from p in rss["results"]
+                              select (string)p["country"];
 
-            var artistViewUrl =
-                            from p in rss["results"]
-                            select (string)p["artistViewUrl"];
+                var artistViewUrl =
+                                from p in rss["results"]
+                                select (string)p["artistViewUrl"];
 
-            ObjectDumper.Write(artistId);
-            ObjectDumper.Write(artistName);
-            ObjectDumper.Write(country);
-            ObjectDumper.Write(artistViewUrl);
+                ObjectDumper.Write(artistId);
+                ObjectDumper.Write(artistName);
+                ObjectDumper.Write(country);
+                ObjectDumper.Write(artistViewUrl);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         //LinqJsonForOneRecord returns selected attributes of one record of the JsonRequest()
         public string GetNumberOfResults(string json)
         {
-            JObject rss = JObject.Parse(json);
-            return (string)rss["resultCount"];
+            try
+            {
+                JObject rss = JObject.Parse(json);
+                return (string)rss["resultCount"];
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
         }
 
         //Object creation
         public void CreateObjects(string json)
         {
-            JObject iTunesSearch = JObject.Parse(json);
-
-            // get JSON result objects into a list
-            List<JToken> results = iTunesSearch["results"].Children().ToList();
-
-            // serialize JSON results into .NET objects
-            List<Result> searchResults = new List<Result>();
-            foreach (JToken result in results)
+            try
             {
-                Result searchResult = JsonConvert.DeserializeObject<Result>(result.ToString());
-                searchResults.Add(searchResult);
+                JObject iTunesSearch = JObject.Parse(json);
+
+                // get JSON result objects into a list
+                List<JToken> results = iTunesSearch["results"].Children().ToList();
+
+                // serialize JSON results into .NET objects
+                List<Result> searchResults = new List<Result>();
+                foreach (JToken result in results)
+                {
+                    Result searchResult = JsonConvert.DeserializeObject<Result>(result.ToString());
+                    searchResults.Add(searchResult);
+                }
+
+                ArtistCreation(searchResults);
+                MediaCreation(searchResults);
+                AlbumCreation(searchResults);
+
+                Artists = Artists.GroupBy(x => x.ArtistID).Select(x => x.FirstOrDefault()).ToList<Artist>();
+                Medias = Medias.GroupBy(x => x.MediaID).Select(x => x.FirstOrDefault()).ToList<Media>();
+                Albums = Albums.GroupBy(x => x.CollectionID).Select(x => x.FirstOrDefault()).ToList<Album>();
             }
-
-            ArtistCreation(searchResults);
-            MediaCreation(searchResults);
-            AlbumCreation(searchResults);
-
-            Artists = Artists.GroupBy(x => x.ArtistID).Select(x => x.FirstOrDefault()).ToList<Artist>();
-            Medias = Medias.GroupBy(x => x.MediaID).Select(x => x.FirstOrDefault()).ToList<Media>();
-            Albums = Albums.GroupBy(x => x.CollectionID).Select(x => x.FirstOrDefault()).ToList<Album>();
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         public void ArtistCreation(List<Result> searchQuery)

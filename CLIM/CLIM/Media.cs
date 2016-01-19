@@ -9,7 +9,7 @@ namespace CLIM
     public class Media
     {
         int mediaID, trackNumber, artistId, collectionId;
-        decimal tracktime; //tracktime in milliseconds
+        decimal tracktime; //in milliseconds
         String kindOfMedia, wrapperType, trackName, genre, trackViewLink, trackPreviewLink, collectionName, artistName;
         decimal trackPrice;
 
