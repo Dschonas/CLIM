@@ -8,6 +8,18 @@ using System.Threading.Tasks;
 
 namespace CLIM
 {
+    //Controller conatins everything regarding the controlling between view and model
+
+    //InputHandler
+    //Save
+    //Delete
+    //SearchOnline
+    //SearchOffline
+    //SearchOfflineArtist
+    //SearchOfflineAlbum
+    //SearchOfflineSong
+
+
     public class Controller
     {
         private Model model;
@@ -72,7 +84,7 @@ namespace CLIM
                     case "search":
 
                         Position = "#search>";
-                        View.Advisor("Online or offline?");
+                        View.Advisor("\nOnline or offline?");
                         View.InputLine(Position);
                         String choice = Console.ReadLine();
                         if (choice.ToLower().Equals("online"))
@@ -85,6 +97,7 @@ namespace CLIM
                     case "search online":
 
                         Position = "#search>online>";
+                        View.Advisor("\nInput search term");
                         SearchOnline();
                         break;
 
@@ -99,16 +112,14 @@ namespace CLIM
                         done = true;
                         break;
 
-                    case "test":
-
-                        Model.XmlQueryArtist("name", "adele");
-                        Model.XmlQueryAlbum("name", "25");
-                        Model.XmlQuerySong("name", "Hello");
-                        break;
-
                     case "save":
 
                         Save();
+                        break;
+
+                    case "delete":
+
+                        Delete();
                         break;
 
                     default:
@@ -121,33 +132,30 @@ namespace CLIM
             System.Environment.Exit(1);
         }
 
-        //Save
-        //Delete
         public void Save()
         {
             if (Model.SaveHistoryFinal())
-                View.Advisor("Saved successfully.");
+                View.Advisor("\nSaved successfully.");
             else
-                View.Advisor("Nothing to save.");
+                View.Advisor("\nNothing to save.");
+
+        }
+
+        public void Delete()
+        {
 
         }
 
         public void SearchOnline()
         {
-            //Console.WriteLine("\nEnter your search term:");
             View.InputLine(Position);
             SearchTerm = Console.ReadLine();
 
             string jsonSearch = Model.JsonRequest(SearchTerm);
-            //Console.WriteLine("I found " + getNumberOfResults(jsonSearch) + " results!");
-            //GetPrintedDataFromJson(0, "artistName", jsonSearch);
             Model.CreateObjects(jsonSearch);
             View.PrintArtistResult();
             View.PrintAlbumResult();
             View.PrintMediaResult();
-            //LinqJsonForOneRecord(jsonSearch);
-
-            //possible save commands
         }
 
         public void SearchOffline()
@@ -176,7 +184,7 @@ namespace CLIM
         public void SearchOfflineArtist()
         {
             Position = "#search>offline>artist>";
-            View.Advisor("\nThe attribute and the value you wanna search for.('help' for possible attributes)");
+            View.Advisor("\nThe attribute you want to search for. ('help' for possible attributes)");
             View.InputLine(Position);
             string attribute = Console.ReadLine().ToLower();
 
@@ -202,13 +210,21 @@ namespace CLIM
                 return;
 
             string queryTerm = term.First().ToString().ToUpper() + term.Substring(1);
-            Model.XmlQueryArtist(attribute, queryTerm);
+
+            try
+            {
+                Model.XmlQuerySong(attribute, queryTerm);
+            }
+            catch (Exception e)
+            {
+                View.ErrorMessage(e.Message);
+            }
         }
 
         public void SearchOfflineAlbum()
         {
             Position = "#search>offline>album>";
-            View.Advisor("\nThe attribute and the value.");
+            View.Advisor("\nThe attribute you want to search for. ('help' for possible attributes)");
             View.InputLine(Position);
             string attribute = Console.ReadLine().ToLower();
 
@@ -234,13 +250,21 @@ namespace CLIM
                 return;
 
             string queryTerm = term.First().ToString().ToUpper() + term.Substring(1);
-            Model.XmlQueryAlbum(attribute, queryTerm);
+
+            try
+            {
+                Model.XmlQuerySong(attribute, queryTerm);
+            }
+            catch (Exception e)
+            {
+                View.ErrorMessage(e.Message);
+            }
         }
 
         public void SearchOfflineSong()
         {
             Position = "#search>offline>song>";
-            View.Advisor("\nThe attribute you want to search for.");
+            View.Advisor("\nThe attribute you want to search for. ('help' for possible attributes)");
             View.InputLine(Position);
             string attribute = Console.ReadLine().ToLower();
 
@@ -269,7 +293,15 @@ namespace CLIM
             }
 
             string queryTerm = term.First().ToString().ToUpper() + term.Substring(1);
-            Model.XmlQuerySong(attribute, queryTerm);
+
+            try
+            {
+                Model.XmlQuerySong(attribute, queryTerm);
+            }
+            catch (Exception e)
+            {
+                View.ErrorMessage(e.Message);
+            }
         }
     }
 }

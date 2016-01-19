@@ -10,24 +10,57 @@ using System.Xml.Linq;
 
 namespace CLIM
 {
-    //WebRequest
-    //JSON query
-    //ObjectCreation
+    //Model conatins everything regarding the data manipulation
+
+    //WebRequest + JSON
+        //JsonRequest
+        //GetDataFromJson
+        //GetPrintedDataFromJson
+        //LinqJsonForOneRecord
+        //GetNumberOfResults
+    //Object Creation
+        //CreateObjects
+        //ArtistCreation
+        //AlbumCreation
+        //MediaCreation
+        //CreateMediaFromResult
+    //XML
+        //SaveHistoryFinal
+        //DeleteHistory
+        //XmlQuery
+        //XmlQueryArtist
+        //XmlQueryAlbum
+        //XmlQuerySong
+    
     public class Model
     {
         internal List<Artist> Artists { get; set; }
         internal List<Media> Medias { get; set; }
         internal List<Album> Albums { get; set; }
+        private View view;
 
-        public Model()
+        public View View
+        {
+            get
+            {
+                return view;
+            }
+
+            set
+            {
+                if (value != null)
+                    view = value;
+            }
+        }
+
+        public Model(View view)
         {
             Artists = new List<Artist>();
             Medias = new List<Media>();
             Albums = new List<Album>();
+            View = view;
         }
 
-
-        //JSON queries
 
         //Requests the Json file with the URL
         public string JsonRequest(string searchTerm)
@@ -50,7 +83,7 @@ namespace CLIM
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                View.ErrorMessage(e.Message);
                 return null;
             }
         }
@@ -69,7 +102,7 @@ namespace CLIM
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                View.ErrorMessage(e.Message);
                 return null;
             }
         }
@@ -84,7 +117,7 @@ namespace CLIM
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                View.ErrorMessage(e.Message);
                 return null;
             }
         }
@@ -116,7 +149,7 @@ namespace CLIM
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                View.ErrorMessage(e.Message);
             }
         }
 
@@ -130,7 +163,7 @@ namespace CLIM
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                View.ErrorMessage(e.Message);
                 return null;
             }
         }
@@ -163,7 +196,7 @@ namespace CLIM
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                View.ErrorMessage(e.Message);
             }
         }
 
@@ -242,59 +275,6 @@ namespace CLIM
             else return null;
         }
 
-        public bool SaveHistory()
-        {
-            if (Artists.Count != 0)
-            {
-                XmlDocument xdoc = new XmlDocument();
-                XElement xml = new XElement("XML");
-
-                foreach (var artist in Artists)
-                {
-                    XElement xartist = new XElement("Artist",
-                                        new XElement("Name", artist.Name),
-                                        new XElement("Country", artist.Country),
-                                        new XElement("Link", artist.ArtistViewLink),
-                                        new XElement("iTunesID", artist.ArtistID));
-                    foreach (var album in Albums)
-                    {
-                        if (album.MediaList.First().ArtistName.Equals(artist.Name))
-                        {
-                            XElement xalbum = new XElement("Album",
-                                                        new XElement("Name", album.CollectionName),
-                                                        new XElement("ID", album.CollectionID),
-                                                        new XElement("Price", album.CollectionPrice),
-                                                        new XElement("Currency", album.Currency),
-                                                        new XElement("ArtworkLink", album.ArtworkLink),
-                                                        new XElement("Link", album.CollectionViewLink));
-
-                            foreach (var media in album.MediaList)
-                            {
-                                XElement xsong = new XElement("Song",
-                                                                   new XElement("Type", media.WrapperType),
-                                                                   new XElement("Name", media.TrackName),
-                                                                   new XElement("Genre", media.Genre),
-                                                                   new XElement("TrackNumber", media.TrackNumber),
-                                                                   new XElement("Price", media.TrackPrice),
-                                                                   new XElement("Duration", media.Tracktime),
-                                                                   new XElement("Link", media.TrackViewLink),
-                                                                   new XElement("Preview", media.TrackPreviewLink),
-                                                                   new XElement("AlbumName", media.CollectionName)
-                                                           );
-                                xalbum.Add(xsong);
-                            }
-                            xartist.Add(xalbum);
-                        }
-                    }
-                    xml.Add(xartist);
-                    xdoc.LoadXml(xml.ToString());
-                }
-                xdoc.Save("..//..//clim_history.xml");
-                return true;
-            }
-            return false;
-        }
-
         public bool SaveHistoryFinal()
         {
             if (Artists.Count != 0)
@@ -347,6 +327,12 @@ namespace CLIM
                 xdoc.Save("..//..//clim_history.xml");
                 return true;
             }
+            return false;
+        }
+
+        public bool DeleteHistory()
+        {
+
             return false;
         }
 
@@ -473,6 +459,58 @@ namespace CLIM
                 xalbum.Add(xsong);
                 xartist.Add(xalbum);
             }
+        }
+        public bool SaveHistory()
+        {
+            if (Artists.Count != 0)
+            {
+                XmlDocument xdoc = new XmlDocument();
+                XElement xml = new XElement("XML");
+
+                foreach (var artist in Artists)
+                {
+                    XElement xartist = new XElement("Artist",
+                                        new XElement("Name", artist.Name),
+                                        new XElement("Country", artist.Country),
+                                        new XElement("Link", artist.ArtistViewLink),
+                                        new XElement("iTunesID", artist.ArtistID));
+                    foreach (var album in Albums)
+                    {
+                        if (album.MediaList.First().ArtistName.Equals(artist.Name))
+                        {
+                            XElement xalbum = new XElement("Album",
+                                                        new XElement("Name", album.CollectionName),
+                                                        new XElement("ID", album.CollectionID),
+                                                        new XElement("Price", album.CollectionPrice),
+                                                        new XElement("Currency", album.Currency),
+                                                        new XElement("ArtworkLink", album.ArtworkLink),
+                                                        new XElement("Link", album.CollectionViewLink));
+
+                            foreach (var media in album.MediaList)
+                            {
+                                XElement xsong = new XElement("Song",
+                                                                   new XElement("Type", media.WrapperType),
+                                                                   new XElement("Name", media.TrackName),
+                                                                   new XElement("Genre", media.Genre),
+                                                                   new XElement("TrackNumber", media.TrackNumber),
+                                                                   new XElement("Price", media.TrackPrice),
+                                                                   new XElement("Duration", media.Tracktime),
+                                                                   new XElement("Link", media.TrackViewLink),
+                                                                   new XElement("Preview", media.TrackPreviewLink),
+                                                                   new XElement("AlbumName", media.CollectionName)
+                                                           );
+                                xalbum.Add(xsong);
+                            }
+                            xartist.Add(xalbum);
+                        }
+                    }
+                    xml.Add(xartist);
+                    xdoc.LoadXml(xml.ToString());
+                }
+                xdoc.Save("..//..//clim_history.xml");
+                return true;
+            }
+            return false;
         }
     }
 

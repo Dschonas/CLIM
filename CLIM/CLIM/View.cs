@@ -6,6 +6,23 @@ using System.Threading.Tasks;
 
 namespace CLIM
 {
+    //View contains everything regarding the output
+
+    //ShowHelp
+    //ShowHelpOfflineArtist
+    //ShowHelpOfflineAlbum
+    //ShowHelpOfflineSong
+    //ShowHelpOfflineArtistOutput
+    //ShowHelpOfflineAlbumOutput
+    //ShowHelpOfflineSongOutput
+    //PrintArtistResult
+    //PrintAlbumResult
+    //PrintSongResult
+    //Handling certain output
+        //Advisor
+        //InputLine
+        //ErrorMessage
+
     public class View
     {
         private Controller controller;
@@ -39,7 +56,7 @@ namespace CLIM
 
         public View()
         {
-            Model = new Model();
+            Model = new Model(this);
             Controller = new Controller(this.Model, this);
 
             Controller.InputHandler();
@@ -51,11 +68,67 @@ namespace CLIM
             Console.WriteLine("\t\t (iTunes Database).");
             Console.WriteLine("SEARCH OFFLINE \t Offers to search for the given term based on your");
             Console.WriteLine("\t\t past search history. (XML file)");
-            //Console.WriteLine("DELETE \t\t Delete a certain artist, album, song or the whole history.");
             Console.WriteLine("SAVE \t\t Stores your last search in a XML file.");
+            Console.WriteLine("DELETE \t\t Deletes your XML history file.");
             Console.WriteLine("EXIT \t\t Exits the application.");
+            //Console.WriteLine("DELETE \t\t Delete a certain artist, album, song or the whole history.");
             //Console.WriteLine("START TRACK \t Starts a sample of a certain track.");
             //Console.WriteLine("OPEN ARTIST \t Opens a preview pic of an artist.\n");
+        }
+
+        public List<string> ShowHelpOfflineArtist()
+        {
+            List<string> list = new List<string>();
+            list.Add("name");
+            list.Add("country");
+            list.Add("itunesid");
+            return list;
+        }
+
+        public List<string> ShowHelpOfflineAlbum()
+        {
+            List<string> list = new List<string>();
+            list.Add("name");
+            list.Add("price");
+            list.Add("currency");
+            return list;
+        }
+
+        public List<string> ShowHelpOfflineSong()
+        {
+            List<string> list = new List<string>();
+            list.Add("name");
+            list.Add("price");
+            list.Add("type");
+            list.Add("genre");
+            list.Add("tracknumber");
+            list.Add("duration");
+            list.Add("albumname");
+            return list;
+        }
+
+        public void ShowHelpOfflineArtistOutput()
+        {
+            foreach (var artist in ShowHelpOfflineArtist())
+            {
+                Console.WriteLine(artist);
+            }
+        }
+
+        public void ShowHelpOfflineAlbumOutput()
+        {
+            foreach (var album in ShowHelpOfflineAlbum())
+            {
+                Console.WriteLine(album);
+            }
+        }
+
+        public void ShowHelpOfflineSongOutput()
+        {
+            foreach (var song in ShowHelpOfflineSong())
+            {
+                Console.WriteLine(song);
+            }
         }
 
         public void PrintArtistResult()
@@ -124,62 +197,7 @@ namespace CLIM
                 }
             }
         }
-
-        public List<string> ShowHelpOfflineArtist()
-        {
-            List<string> list = new List<string>();
-            list.Add("name");
-            list.Add("country");
-            list.Add("itunesid");
-            return list;
-        }
-
-        public List<string> ShowHelpOfflineAlbum()
-        {
-            List<string> list = new List<string>();
-            list.Add("name");
-            list.Add("price");
-            list.Add("currency");
-            return list;
-        }
-
-        public List<string> ShowHelpOfflineSong()
-        {
-            List<string> list = new List<string>();
-            list.Add("name");
-            list.Add("price");
-            list.Add("type");
-            list.Add("genre");
-            list.Add("tracknumber");
-            list.Add("duration");
-            list.Add("albumname");
-            return list;
-        }
-
-        public void ShowHelpOfflineArtistOutput()
-        {
-            foreach (var artist in ShowHelpOfflineArtist())
-            {
-                Console.WriteLine(artist);
-            }
-        }
-
-        public void ShowHelpOfflineAlbumOutput()
-        {
-            foreach (var album in ShowHelpOfflineAlbum())
-            {
-                Console.WriteLine(album);
-            }
-        }
-
-        public void ShowHelpOfflineSongOutput()
-        {
-            foreach (var song in ShowHelpOfflineSong())
-            {
-                Console.WriteLine(song);
-            }
-        }
-
+        
         public void Advisor(string advice)
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -189,7 +207,7 @@ namespace CLIM
 
         public void InputLine(string input)
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.Write(input);
             Console.ResetColor();
         }
@@ -200,11 +218,6 @@ namespace CLIM
             Console.WriteLine(reason);
             Console.ResetColor();
         }
-
-        public void ErrorMessage(string reason, string exception)
-        {
-
-        }
-        //every printouts
+        
     }
 }
