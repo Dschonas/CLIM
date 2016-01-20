@@ -99,7 +99,8 @@ namespace TestCLIM
         //[ExpectedException(typeof(ArgumentNullException))]
         public void TestModel_CreateObjects_Success()
         {
-            Model m = new Model();
+            View view = new View();
+            Model m = new Model(view);
             m.CreateObjects(null); //Doesn't fail because of the try() and catch() in the method
         }
     }
