@@ -284,14 +284,17 @@ namespace CLIM
 
                 foreach (var artist in Artists)
                 {
+                    
                     XElement xartist = new XElement("artist",
                                         new XAttribute("name", artist.Name),
                                         new XAttribute("country", artist.Country),
                                         new XAttribute("itunesid", artist.ArtistID),
                                         new XElement("link", artist.ArtistViewLink)
                                         );
+                    
                     foreach (var album in Albums)
                     {
+                    
                         if (album.MediaList.Count != 0)
                         {
                             XElement xalbum = new XElement("album",

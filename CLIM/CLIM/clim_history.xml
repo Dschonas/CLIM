@@ -1,6 +1,26 @@
 <xml>
-  <artist name="Adele" country="USA" itunesid="262836961">
-    <link>https://itunes.apple.com/us/artist/adele/id262836961?uo=4</link>
+  <artist name="Pietcast" country="USA" itunesid="0">
+    <link />
+    <album name="Pietcast Fakten gibt es woanders" id="1016200886" price="0.0" currency="USD">
+      <link>https://itunes.apple.com/us/podcast/pietcast-fakten-gibt-es-woanders/id1016200886?mt=2&amp;uo=4</link>
+      <artworklink>http://is2.mzstatic.com/image/thumb/Music5/v4/c2/dc/e9/c2dce919-e156-8ddc-f95f-b5a93a0b2829/source/100x100bb.jpg</artworklink>
+      <track>
+        <song type="track" name="Pietcast Fakten gibt es woanders" genre="Philosophy" tracknumber="0" price="0.0" duration="0" albumname="Pietcast Fakten gibt es woanders">
+          <link>https://itunes.apple.com/us/podcast/pietcast-fakten-gibt-es-woanders/id1016200886?mt=2&amp;uo=4</link>
+          <preview />
+        </song>
+      </track>
+    </album>
+    <album name="PietCast" id="968876559" price="0.0" currency="USD">
+      <link>https://itunes.apple.com/us/podcast/pietcast/id968876559?mt=2&amp;uo=4</link>
+      <artworklink>http://is1.mzstatic.com/image/thumb/Music1/v4/fe/ca/0b/feca0bb3-9e4d-585d-f774-64b7287e9389/source/100x100bb.jpg</artworklink>
+      <track>
+        <song type="track" name="PietCast" genre="Video Games" tracknumber="0" price="0.0" duration="0" albumname="PietCast">
+          <link>https://itunes.apple.com/us/podcast/pietcast/id968876559?mt=2&amp;uo=4</link>
+          <preview />
+        </song>
+      </track>
+    </album>
     <album name="25" id="1051394208" price="10.99" currency="USD">
       <link>https://itunes.apple.com/us/album/hello/id1051394208?i=1051394215&amp;uo=4</link>
       <artworklink>http://is5.mzstatic.com/image/thumb/Music6/v4/8c/91/5d/8c915d9b-d9e4-f735-1b91-81ca1b6e6312/source/100x100bb.jpg</artworklink>
@@ -179,21 +199,15 @@
         </song>
       </track>
       <track>
-        <song type="track" name="My Same" genre="Pop" tracknumber="10" price="1.29" duration="195653" albumname="19">
-          <link>https://itunes.apple.com/us/album/my-same/id282374043?i=282374077&amp;uo=4</link>
-          <preview>http://a1956.phobos.apple.com/us/r1000/000/Music/f4/7b/02/mzm.faicujsi.aac.p.m4a</preview>
-        </song>
-      </track>
-      <track>
         <song type="track" name="Daydreamer" genre="Pop" tracknumber="1" price="1.29" duration="220507" albumname="19">
           <link>https://itunes.apple.com/us/album/daydreamer/id282374043?i=282374066&amp;uo=4</link>
           <preview>http://a645.phobos.apple.com/us/r1000/019/Music/12/7d/2e/mzm.syuzpyel.aac.p.m4a</preview>
         </song>
       </track>
       <track>
-        <song type="track" name="Cold Shoulder" genre="Pop" tracknumber="4" price="1.29" duration="191867" albumname="19">
-          <link>https://itunes.apple.com/us/album/cold-shoulder/id282374043?i=282374070&amp;uo=4</link>
-          <preview>http://a1053.phobos.apple.com/us/r1000/029/Music/67/4a/2b/mzm.jppeqmhb.aac.p.m4a</preview>
+        <song type="track" name="My Same" genre="Pop" tracknumber="10" price="1.29" duration="195653" albumname="19">
+          <link>https://itunes.apple.com/us/album/my-same/id282374043?i=282374077&amp;uo=4</link>
+          <preview>http://a1956.phobos.apple.com/us/r1000/000/Music/f4/7b/02/mzm.faicujsi.aac.p.m4a</preview>
         </song>
       </track>
       <track>
@@ -224,6 +238,353 @@
         <song type="track" name="Crazy for You" genre="Pop" tracknumber="5" price="1.29" duration="208040" albumname="19">
           <link>https://itunes.apple.com/us/album/crazy-for-you/id282374043?i=282374071&amp;uo=4</link>
           <preview>http://a510.phobos.apple.com/us/r1000/042/Music/44/ba/b5/mzm.lsmhfnqr.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Cold Shoulder" genre="Pop" tracknumber="4" price="1.29" duration="191867" albumname="19">
+          <link>https://itunes.apple.com/us/album/cold-shoulder/id282374043?i=282374070&amp;uo=4</link>
+          <preview>http://a1053.phobos.apple.com/us/r1000/029/Music/67/4a/2b/mzm.jppeqmhb.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Melt My Heart to Stone" genre="Pop" tracknumber="13" price="1.99" duration="179145" albumname="19">
+          <link>https://itunes.apple.com/us/music-video/melt-my-heart-to-stone/id282374082?uo=4</link>
+          <preview>http://a102.v.phobos.apple.com/us/r1000/123/Video2/v4/6c/b1/14/6cb11447-2666-56a4-3e6e-9352933d7135/mzvf_576548912245576818.640x464.h264lc.U.p.m4v</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Melt My Heart to Stone" genre="Pop" tracknumber="6" price="1.29" duration="203907" albumname="19">
+          <link>https://itunes.apple.com/us/album/melt-my-heart-to-stone/id282374043?i=282374072&amp;uo=4</link>
+          <preview>http://a260.phobos.apple.com/us/r1000/012/Music/d9/96/dd/mzm.skdxrcdi.aac.p.m4a</preview>
+        </song>
+      </track>
+    </album>
+    <album name="iTunes Festival: London 2011 - EP" id="450329290" price="5.99" currency="USD">
+      <link>https://itunes.apple.com/us/album/i-cant-make-you-love-me-live/id450329290?i=450329334&amp;uo=4</link>
+      <artworklink>http://is4.mzstatic.com/image/thumb/Music/v4/2f/59/91/2f59913e-e1f9-5757-02c6-ff6afd9baad5/source/100x100bb.jpg</artworklink>
+      <track>
+        <song type="track" name="I Can't Make You Love Me" genre="Pop" tracknumber="5" price="1.29" duration="214240" albumname="iTunes Festival: London 2011 - EP">
+          <link>https://itunes.apple.com/us/album/i-cant-make-you-love-me-live/id450329290?i=450329334&amp;uo=4</link>
+          <preview>http://a106.phobos.apple.com/us/r1000/090/Music/93/69/e3/mzm.iehqrksd.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Rolling in the Deep" genre="Pop" tracknumber="6" price="1.29" duration="321747" albumname="iTunes Festival: London 2011 - EP">
+          <link>https://itunes.apple.com/us/album/rolling-in-the-deep-live/id450329290?i=450329363&amp;uo=4</link>
+          <preview>http://a1760.phobos.apple.com/us/r1000/103/Music/c6/85/9e/mzm.fctbigie.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Take It All" genre="Pop" tracknumber="4" price="1.29" duration="242307" albumname="iTunes Festival: London 2011 - EP">
+          <link>https://itunes.apple.com/us/album/take-it-all-live/id450329290?i=450329333&amp;uo=4</link>
+          <preview>http://a1496.phobos.apple.com/us/r1000/066/Music/9d/c6/62/mzm.qsrzulvh.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="One and Only" genre="Pop" tracknumber="1" price="1.29" duration="343933" albumname="iTunes Festival: London 2011 - EP">
+          <link>https://itunes.apple.com/us/album/one-and-only-live/id450329290?i=450329292&amp;uo=4</link>
+          <preview>http://a215.phobos.apple.com/us/r1000/116/Music/19/22/6e/mzm.enlmzbcp.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Rumour Has It" genre="Pop" tracknumber="3" price="1.29" duration="228027" albumname="iTunes Festival: London 2011 - EP">
+          <link>https://itunes.apple.com/us/album/rumour-has-it-live/id450329290?i=450329308&amp;uo=4</link>
+          <preview>http://a1196.phobos.apple.com/us/r1000/094/Music/16/cb/01/mzm.refnhmgv.aac.p.m4a</preview>
+        </song>
+      </track>
+    </album>
+    <album name="iTunes Live from SoHo" id="303197123" price="7.99" currency="USD">
+      <link>https://itunes.apple.com/us/album/make-you-feel-my-love-live/id303197123?i=303197129&amp;uo=4</link>
+      <artworklink>http://is2.mzstatic.com/image/thumb/Music/v4/53/cd/ec/53cdec98-3641-c500-582c-c731f1408a04/source/100x100bb.jpg</artworklink>
+      <track>
+        <song type="track" name="Make You Feel My Love" genre="Pop" tracknumber="3" price="1.29" duration="253653" albumname="iTunes Live from SoHo">
+          <link>https://itunes.apple.com/us/album/make-you-feel-my-love-live/id303197123?i=303197129&amp;uo=4</link>
+          <preview>http://a1201.phobos.apple.com/us/r1000/109/Music/87/02/a8/mzm.ljwokqka.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="That's It, I Quit, I'm Moving On" genre="Pop" tracknumber="8" price="1.29" duration="143933" albumname="iTunes Live from SoHo">
+          <link>https://itunes.apple.com/us/album/thats-it-i-quit-im-moving/id303197123?i=303197134&amp;uo=4</link>
+          <preview>http://a33.phobos.apple.com/us/r1000/092/Music/4f/05/34/mzm.xtoycppz.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Fool That I Am" genre="Pop" tracknumber="7" price="1.29" duration="150360" albumname="iTunes Live from SoHo">
+          <link>https://itunes.apple.com/us/album/fool-that-i-am-live/id303197123?i=303197133&amp;uo=4</link>
+          <preview>http://a1208.phobos.apple.com/us/r1000/089/Music/76/b2/d0/mzm.andqryqy.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Chasing Pavements" genre="Pop" tracknumber="6" price="1.29" duration="227240" albumname="iTunes Live from SoHo">
+          <link>https://itunes.apple.com/us/album/chasing-pavements-live/id303197123?i=303197132&amp;uo=4</link>
+          <preview>http://a1804.phobos.apple.com/us/r1000/090/Music/a8/bb/5e/mzm.brtqjxqy.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Crazy for You" genre="Pop" tracknumber="1" price="1.29" duration="275000" albumname="iTunes Live from SoHo">
+          <link>https://itunes.apple.com/us/album/crazy-for-you-live/id303197123?i=303197127&amp;uo=4</link>
+          <preview>http://a899.phobos.apple.com/us/r1000/112/Music/a5/50/94/mzm.tpjfqmrj.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Right As Rain" genre="Pop" tracknumber="2" price="1.29" duration="222053" albumname="iTunes Live from SoHo">
+          <link>https://itunes.apple.com/us/album/right-as-rain-live/id303197123?i=303197128&amp;uo=4</link>
+          <preview>http://a1056.phobos.apple.com/us/r1000/083/Music/a8/1c/0f/mzm.qtuzgged.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Hometown Glory" genre="Pop" tracknumber="5" price="1.29" duration="237827" albumname="iTunes Live from SoHo">
+          <link>https://itunes.apple.com/us/album/hometown-glory-live/id303197123?i=303197131&amp;uo=4</link>
+          <preview>http://a1083.phobos.apple.com/us/r1000/063/Music/82/15/03/mzm.dltppjrr.aac.p.m4a</preview>
+        </song>
+      </track>
+    </album>
+  </artist>
+  <artist name="Adele" country="USA" itunesid="262836961">
+    <link>https://itunes.apple.com/us/artist/adele/id262836961?uo=4</link>
+    <album name="Pietcast Fakten gibt es woanders" id="1016200886" price="0.0" currency="USD">
+      <link>https://itunes.apple.com/us/podcast/pietcast-fakten-gibt-es-woanders/id1016200886?mt=2&amp;uo=4</link>
+      <artworklink>http://is2.mzstatic.com/image/thumb/Music5/v4/c2/dc/e9/c2dce919-e156-8ddc-f95f-b5a93a0b2829/source/100x100bb.jpg</artworklink>
+      <track>
+        <song type="track" name="Pietcast Fakten gibt es woanders" genre="Philosophy" tracknumber="0" price="0.0" duration="0" albumname="Pietcast Fakten gibt es woanders">
+          <link>https://itunes.apple.com/us/podcast/pietcast-fakten-gibt-es-woanders/id1016200886?mt=2&amp;uo=4</link>
+          <preview />
+        </song>
+      </track>
+    </album>
+    <album name="PietCast" id="968876559" price="0.0" currency="USD">
+      <link>https://itunes.apple.com/us/podcast/pietcast/id968876559?mt=2&amp;uo=4</link>
+      <artworklink>http://is1.mzstatic.com/image/thumb/Music1/v4/fe/ca/0b/feca0bb3-9e4d-585d-f774-64b7287e9389/source/100x100bb.jpg</artworklink>
+      <track>
+        <song type="track" name="PietCast" genre="Video Games" tracknumber="0" price="0.0" duration="0" albumname="PietCast">
+          <link>https://itunes.apple.com/us/podcast/pietcast/id968876559?mt=2&amp;uo=4</link>
+          <preview />
+        </song>
+      </track>
+    </album>
+    <album name="25" id="1051394208" price="10.99" currency="USD">
+      <link>https://itunes.apple.com/us/album/hello/id1051394208?i=1051394215&amp;uo=4</link>
+      <artworklink>http://is5.mzstatic.com/image/thumb/Music6/v4/8c/91/5d/8c915d9b-d9e4-f735-1b91-81ca1b6e6312/source/100x100bb.jpg</artworklink>
+      <track>
+        <song type="track" name="Hello" genre="Pop" tracknumber="1" price="1.29" duration="295502" albumname="25">
+          <link>https://itunes.apple.com/us/album/hello/id1051394208?i=1051394215&amp;uo=4</link>
+          <preview>http://a1912.phobos.apple.com/us/r1000/170/Music6/v4/68/34/f1/6834f1f8-8fdb-4247-492a-c0caea580082/mzaf_3920281300599106672.plus.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="When We Were Young" genre="Pop" tracknumber="4" price="1.29" duration="290900" albumname="25">
+          <link>https://itunes.apple.com/us/album/when-we-were-young/id1051394208?i=1051394224&amp;uo=4</link>
+          <preview>http://a937.phobos.apple.com/us/r1000/140/Music69/v4/ec/41/49/ec4149fb-0268-5334-41c5-63ed909edf9a/mzaf_8940070516580294462.plus.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="All I Ask" genre="Pop" tracknumber="10" price="1.29" duration="271800" albumname="25">
+          <link>https://itunes.apple.com/us/album/all-i-ask/id1051394208?i=1051394817&amp;uo=4</link>
+          <preview>http://a803.phobos.apple.com/us/r1000/158/Music69/v4/d4/a1/07/d4a1076a-3636-7791-2401-698330e7a26d/mzaf_3982126671713878425.plus.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Water Under the Bridge" genre="Pop" tracknumber="6" price="1.29" duration="240439" albumname="25">
+          <link>https://itunes.apple.com/us/album/water-under-the-bridge/id1051394208?i=1051394813&amp;uo=4</link>
+          <preview>http://a1354.phobos.apple.com/us/r1000/121/Music69/v4/86/6d/b6/866db603-024a-e82a-976f-d443a623a8c3/mzaf_122905703155999864.plus.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Million Years Ago" genre="Pop" tracknumber="9" price="1.29" duration="227066" albumname="25">
+          <link>https://itunes.apple.com/us/album/million-years-ago/id1051394208?i=1051394816&amp;uo=4</link>
+          <preview>http://a1097.phobos.apple.com/us/r1000/146/Music69/v4/27/ae/a6/27aea65c-bcba-3753-f622-64a9424e7ed1/mzaf_8457035217812911151.plus.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Send My Love (To Your New Lover)" genre="Pop" tracknumber="2" price="1.29" duration="223079" albumname="25">
+          <link>https://itunes.apple.com/us/album/send-my-love-to-your-new-lover/id1051394208?i=1051394219&amp;uo=4</link>
+          <preview>http://a1673.phobos.apple.com/us/r1000/156/Music69/v4/d6/19/7f/d6197fe1-629b-96a2-a0d0-34cf7f968538/mzaf_6123298197326321883.plus.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Remedy" genre="Pop" tracknumber="5" price="1.29" duration="245427" albumname="25">
+          <link>https://itunes.apple.com/us/album/remedy/id1051394208?i=1051394227&amp;uo=4</link>
+          <preview>http://a107.phobos.apple.com/us/r1000/130/Music69/v4/0f/f8/3f/0ff83fb7-ad94-76a0-1192-d0262a28c1a9/mzaf_127888539772639743.plus.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Sweetest Devotion" genre="Pop" tracknumber="11" price="1.29" duration="251702" albumname="25">
+          <link>https://itunes.apple.com/us/album/sweetest-devotion/id1051394208?i=1051394818&amp;uo=4</link>
+          <preview>http://a634.phobos.apple.com/us/r1000/125/Music69/v4/7d/99/10/7d991060-d791-6f59-f8e5-7b91ede6437c/mzaf_7195640508619449109.plus.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="River Lea" genre="Pop" tracknumber="7" price="1.29" duration="225427" albumname="25">
+          <link>https://itunes.apple.com/us/album/river-lea/id1051394208?i=1051394814&amp;uo=4</link>
+          <preview>http://a540.phobos.apple.com/us/r1000/145/Music69/v4/69/ff/a6/69ffa690-ecd3-23da-c248-5833ee491384/mzaf_3965204635845819459.plus.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Love in the Dark" genre="Pop" tracknumber="8" price="1.29" duration="285935" albumname="25">
+          <link>https://itunes.apple.com/us/album/love-in-the-dark/id1051394208?i=1051394815&amp;uo=4</link>
+          <preview>http://a1309.phobos.apple.com/us/r1000/154/Music69/v4/69/fd/cb/69fdcb3b-33c5-e070-a7fd-0a45a2151956/mzaf_8137432081882847786.plus.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="I Miss You" genre="Pop" tracknumber="3" price="1.29" duration="348625" albumname="25">
+          <link>https://itunes.apple.com/us/album/i-miss-you/id1051394208?i=1051394223&amp;uo=4</link>
+          <preview>http://a1107.phobos.apple.com/us/r1000/141/Music69/v4/10/83/6d/10836d17-ce50-9c84-347e-9b2001887489/mzaf_4158565161536648299.plus.aac.p.m4a</preview>
+        </song>
+      </track>
+    </album>
+    <album name="21" id="420075073" price="10.99" currency="USD">
+      <link>https://itunes.apple.com/us/album/rolling-in-the-deep/id420075073?i=420075084&amp;uo=4</link>
+      <artworklink>http://is5.mzstatic.com/image/thumb/Music/v4/cf/7e/47/cf7e47a8-bb18-9156-43d0-7591d0e0855e/source/100x100bb.jpg</artworklink>
+      <track>
+        <song type="track" name="Rolling in the Deep" genre="Pop" tracknumber="1" price="1.29" duration="228293" albumname="21">
+          <link>https://itunes.apple.com/us/album/rolling-in-the-deep/id420075073?i=420075084&amp;uo=4</link>
+          <preview>http://a818.phobos.apple.com/us/r1000/115/Music/3d/fd/74/mzm.dqadcdcf.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Set Fire to the Rain" genre="Pop" tracknumber="5" price="1.29" duration="241693" albumname="21">
+          <link>https://itunes.apple.com/us/album/set-fire-to-the-rain/id420075073?i=420075145&amp;uo=4</link>
+          <preview>http://a940.phobos.apple.com/us/r1000/095/Music/23/9d/ac/mzm.brtdpcie.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Someone Like You" genre="Pop" tracknumber="11" price="1.29" duration="283960" albumname="21">
+          <link>https://itunes.apple.com/us/album/someone-like-you/id420075073?i=420075185&amp;uo=4</link>
+          <preview>http://a1074.phobos.apple.com/us/r1000/092/Music/71/b2/95/mzm.mxaodkka.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Rumour Has It" genre="Pop" tracknumber="2" price="1.29" duration="223267" albumname="21">
+          <link>https://itunes.apple.com/us/album/rumour-has-it/id420075073?i=420075085&amp;uo=4</link>
+          <preview>http://a559.phobos.apple.com/us/r1000/091/Music/05/c0/f2/mzm.wsjnqdix.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Turning Tables" genre="Pop" tracknumber="3" price="1.29" duration="250133" albumname="21">
+          <link>https://itunes.apple.com/us/album/turning-tables/id420075073?i=420075087&amp;uo=4</link>
+          <preview>http://a182.phobos.apple.com/us/r1000/096/Music/6a/89/5f/mzm.kqtahmcf.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="One and Only" genre="Pop" tracknumber="9" price="1.29" duration="348160" albumname="21">
+          <link>https://itunes.apple.com/us/album/one-and-only/id420075073?i=420075170&amp;uo=4</link>
+          <preview>http://a1915.phobos.apple.com/us/r1000/062/Music/25/60/98/mzm.xmqvsqpf.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Lovesong" genre="Pop" tracknumber="10" price="1.29" duration="316440" albumname="21">
+          <link>https://itunes.apple.com/us/album/lovesong/id420075073?i=420075180&amp;uo=4</link>
+          <preview>http://a909.phobos.apple.com/us/r1000/106/Music/16/fa/d6/mzm.yokqzntm.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Don't You Remember" genre="Pop" tracknumber="4" price="1.29" duration="243200" albumname="21">
+          <link>https://itunes.apple.com/us/album/dont-you-remember/id420075073?i=420075124&amp;uo=4</link>
+          <preview>http://a78.phobos.apple.com/us/r1000/107/Music/2d/dc/14/mzm.idkuhokr.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Take It All" genre="Pop" tracknumber="7" price="1.29" duration="228213" albumname="21">
+          <link>https://itunes.apple.com/us/album/take-it-all/id420075073?i=420075155&amp;uo=4</link>
+          <preview>http://a1903.phobos.apple.com/us/r1000/108/Music/b5/95/66/mzm.earcymxk.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="I'll Be Waiting" genre="Pop" tracknumber="8" price="1.29" duration="241653" albumname="21">
+          <link>https://itunes.apple.com/us/album/ill-be-waiting/id420075073?i=420075159&amp;uo=4</link>
+          <preview>http://a91.phobos.apple.com/us/r1000/111/Music/c6/a3/a6/mzm.qbiofloi.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="He Won't Go" genre="Pop" tracknumber="6" price="1.29" duration="277947" albumname="21">
+          <link>https://itunes.apple.com/us/album/he-wont-go/id420075073?i=420075147&amp;uo=4</link>
+          <preview>http://a664.phobos.apple.com/us/r1000/117/Music/7b/5e/96/mzm.rrxjqipf.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="I Found a Boy" genre="Pop" tracknumber="12" price="0" duration="216907" albumname="21">
+          <link>https://itunes.apple.com/us/album/i-found-a-boy/id420075073?i=420075192&amp;uo=4</link>
+          <preview>http://a1243.phobos.apple.com/us/r1000/074/Music/9a/98/81/mzm.vhwdgmvx.aac.p.m4a</preview>
+        </song>
+      </track>
+    </album>
+    <album name="Skyfall - Single" id="566322358" price="1.29" currency="USD">
+      <link>https://itunes.apple.com/us/album/skyfall/id566322358?i=566322365&amp;uo=4</link>
+      <artworklink>http://is2.mzstatic.com/image/thumb/Music/v4/0d/23/c1/0d23c1dd-9dbf-eb1e-f5c8-c39823942d5f/source/100x100bb.jpg</artworklink>
+      <track>
+        <song type="track" name="Skyfall" genre="Pop" tracknumber="1" price="1.29" duration="286082" albumname="Skyfall - Single">
+          <link>https://itunes.apple.com/us/album/skyfall/id566322358?i=566322365&amp;uo=4</link>
+          <preview>http://a238.phobos.apple.com/us/r1000/066/Music/5b/47/e6/mzm.ecgpmndl.aac.p.m4a</preview>
+        </song>
+      </track>
+    </album>
+    <album name="19" id="282374043" price="9.99" currency="USD">
+      <link>https://itunes.apple.com/us/album/make-you-feel-my-love/id282374043?i=282374076&amp;uo=4</link>
+      <artworklink>http://is4.mzstatic.com/image/thumb/Music/v4/2c/40/16/2c4016cd-2ebf-cf05-3436-c0d1af5e065e/source/100x100bb.jpg</artworklink>
+      <track>
+        <song type="track" name="Make You Feel My Love" genre="Pop" tracknumber="9" price="1.29" duration="212040" albumname="19">
+          <link>https://itunes.apple.com/us/album/make-you-feel-my-love/id282374043?i=282374076&amp;uo=4</link>
+          <preview>http://a477.phobos.apple.com/us/r1000/030/Music/ff/50/c8/mzm.mpcralym.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Chasing Pavements" genre="Pop" tracknumber="3" price="1.29" duration="210507" albumname="19">
+          <link>https://itunes.apple.com/us/album/chasing-pavements/id282374043?i=282374069&amp;uo=4</link>
+          <preview>http://a256.phobos.apple.com/us/r1000/040/Music/cb/6f/cf/mzm.xecinnoy.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Hometown Glory" genre="Pop" tracknumber="12" price="1.29" duration="271227" albumname="19">
+          <link>https://itunes.apple.com/us/album/hometown-glory/id282374043?i=282374081&amp;uo=4</link>
+          <preview>http://a1271.phobos.apple.com/us/r1000/044/Music/a3/94/dd/mzm.unhskrsm.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Daydreamer" genre="Pop" tracknumber="1" price="1.29" duration="220507" albumname="19">
+          <link>https://itunes.apple.com/us/album/daydreamer/id282374043?i=282374066&amp;uo=4</link>
+          <preview>http://a645.phobos.apple.com/us/r1000/019/Music/12/7d/2e/mzm.syuzpyel.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="My Same" genre="Pop" tracknumber="10" price="1.29" duration="195653" albumname="19">
+          <link>https://itunes.apple.com/us/album/my-same/id282374043?i=282374077&amp;uo=4</link>
+          <preview>http://a1956.phobos.apple.com/us/r1000/000/Music/f4/7b/02/mzm.faicujsi.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Right as Rain" genre="Pop" tracknumber="8" price="1.29" duration="197347" albumname="19">
+          <link>https://itunes.apple.com/us/album/right-as-rain/id282374043?i=282374075&amp;uo=4</link>
+          <preview>http://a1511.phobos.apple.com/us/r1000/032/Music/72/4f/30/mzm.lejxsnhk.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Best for Last" genre="Pop" tracknumber="2" price="1.29" duration="258507" albumname="19">
+          <link>https://itunes.apple.com/us/album/best-for-last/id282374043?i=282374067&amp;uo=4</link>
+          <preview>http://a1358.phobos.apple.com/us/r1000/013/Music/f3/59/20/mzm.ugtvueou.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="First Love" genre="Pop" tracknumber="7" price="1.29" duration="190280" albumname="19">
+          <link>https://itunes.apple.com/us/album/first-love/id282374043?i=282374073&amp;uo=4</link>
+          <preview>http://a178.phobos.apple.com/us/r1000/016/Music/98/c1/9e/mzm.xtoqardf.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Tired" genre="Pop" tracknumber="11" price="1.29" duration="258853" albumname="19">
+          <link>https://itunes.apple.com/us/album/tired/id282374043?i=282374080&amp;uo=4</link>
+          <preview>http://a698.phobos.apple.com/us/r1000/056/Music/8d/c9/bf/mzm.kotbolid.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Crazy for You" genre="Pop" tracknumber="5" price="1.29" duration="208040" albumname="19">
+          <link>https://itunes.apple.com/us/album/crazy-for-you/id282374043?i=282374071&amp;uo=4</link>
+          <preview>http://a510.phobos.apple.com/us/r1000/042/Music/44/ba/b5/mzm.lsmhfnqr.aac.p.m4a</preview>
+        </song>
+      </track>
+      <track>
+        <song type="track" name="Cold Shoulder" genre="Pop" tracknumber="4" price="1.29" duration="191867" albumname="19">
+          <link>https://itunes.apple.com/us/album/cold-shoulder/id282374043?i=282374070&amp;uo=4</link>
+          <preview>http://a1053.phobos.apple.com/us/r1000/029/Music/67/4a/2b/mzm.jppeqmhb.aac.p.m4a</preview>
         </song>
       </track>
       <track>

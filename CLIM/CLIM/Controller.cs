@@ -118,8 +118,13 @@ namespace CLIM
                         break;
 
                     case "delete":
-
-                        Delete();
+                        foreach (var artist in Model.Artists)
+                        {
+                            foreach (var ar in artist.AlbumList)
+                            {
+                                Console.WriteLine(ar.CollectionName);
+                            }
+                        }
                         break;
 
                     default:
