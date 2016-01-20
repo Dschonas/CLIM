@@ -13,25 +13,25 @@ namespace CLIM
     //Model conatins everything regarding the data manipulation
 
     //WebRequest + JSON
-        //JsonRequest
-        //GetDataFromJson
-        //GetPrintedDataFromJson
-        //LinqJsonForOneRecord
-        //GetNumberOfResults
+    //JsonRequest
+    //GetDataFromJson
+    //GetPrintedDataFromJson
+    //LinqJsonForOneRecord
+    //GetNumberOfResults
     //Object Creation
-        //CreateObjects
-        //ArtistCreation
-        //AlbumCreation
-        //MediaCreation
-        //CreateMediaFromResult
+    //CreateObjects
+    //ArtistCreation
+    //AlbumCreation
+    //MediaCreation
+    //CreateMediaFromResult
     //XML
-        //SaveHistoryFinal
-        //DeleteHistory
-        //XmlQuery
-        //XmlQueryArtist
-        //XmlQueryAlbum
-        //XmlQuerySong
-    
+    //SaveHistoryFinal
+    //DeleteHistory
+    //XmlQuery
+    //XmlQueryArtist
+    //XmlQueryAlbum
+    //XmlQuerySong
+
     public class Model
     {
         internal List<Artist> Artists { get; set; }
@@ -186,13 +186,22 @@ namespace CLIM
                     searchResults.Add(searchResult);
                 }
 
-                ArtistCreation(searchResults);
                 MediaCreation(searchResults);
                 AlbumCreation(searchResults);
+                ArtistCreation(searchResults);
 
                 Artists = Artists.GroupBy(x => x.ArtistID).Select(x => x.FirstOrDefault()).ToList<Artist>();
                 Medias = Medias.GroupBy(x => x.MediaID).Select(x => x.FirstOrDefault()).ToList<Media>();
                 Albums = Albums.GroupBy(x => x.CollectionID).Select(x => x.FirstOrDefault()).ToList<Album>();
+
+                foreach (Artist a in Artists)
+                {
+                    a.AlbumList = a.AlbumList.GroupBy(x => x.CollectionID).Select(x => x.FirstOrDefault()).ToList<Album>();
+                }
+                foreach (Album a in Albums)
+                {
+                    a.MediaList = a.MediaList.GroupBy(x => x.MediaID).Select(x => x.FirstOrDefault()).ToList<Media>();
+                }
             }
             catch (Exception e)
             {
@@ -203,6 +212,7 @@ namespace CLIM
         public void ArtistCreation(List<Result> searchQuery)
         {
             if (searchQuery != null)
+            {
                 foreach (Result r in searchQuery)
                 {
                     Artist artist = new Artist();
@@ -210,13 +220,14 @@ namespace CLIM
                     artist.ArtistViewLink = r.ArtistViewUrl;
                     artist.Country = r.Country;
                     artist.Name = r.ArtistName;
-
-                    if (!Artists.Contains(artist))
-                    {
-                        Artists.Add(artist);
-
-                    }
+                    if (Albums != null)
+                        foreach (Album a in Albums)
+                        {
+                            artist.AlbumList.Add(a);
+                        }
+                    Artists.Add(artist);
                 }
+            }
         }
         public void AlbumCreation(List<Result> searchQuery)
         {
@@ -231,6 +242,7 @@ namespace CLIM
                     album.CollectionViewLink = r.CollectionViewUrl;
                     album.ReleaseDate = r.ReleaseDate;
                     album.Currency = "USD";
+                    album.ArtistName = r.ArtistName;
                     if (Medias != null)
                         foreach (Media m in Medias)
                         {
@@ -284,17 +296,17 @@ namespace CLIM
 
                 foreach (var artist in Artists)
                 {
-                    
+
                     XElement xartist = new XElement("artist",
                                         new XAttribute("name", artist.Name),
                                         new XAttribute("country", artist.Country),
                                         new XAttribute("itunesid", artist.ArtistID),
                                         new XElement("link", artist.ArtistViewLink)
                                         );
-                    
-                    foreach (var album in Albums)
+
+                    foreach (var album in artist.AlbumList)
                     {
-                    
+
                         if (album.MediaList.Count != 0)
                         {
                             XElement xalbum = new XElement("album",
@@ -368,6 +380,7 @@ namespace CLIM
                         Country = x.Attribute("country").Value,
                         iTunesID = x.Attribute("itunesid").Value
                     };
+            Console.WriteLine("....sd.fs");
             ObjectDumper.Write(query);
         }
 

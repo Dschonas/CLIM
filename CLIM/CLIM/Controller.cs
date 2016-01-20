@@ -117,14 +117,20 @@ namespace CLIM
                         Save();
                         break;
 
-                    case "delete":
-                        foreach (var artist in Model.Artists)
+                    case "test":
+                        /*foreach (var artist in Model.Artists)
                         {
+                            Console.WriteLine(artist.Name);
                             foreach (var ar in artist.AlbumList)
                             {
                                 Console.WriteLine(ar.CollectionName);
                             }
+                        }*/
+                        foreach (var album in Model.Albums)
+                        {
+                            Console.WriteLine(album.CollectionName);
                         }
+
                         break;
 
                     default:
@@ -218,7 +224,7 @@ namespace CLIM
 
             try
             {
-                Model.XmlQuerySong(attribute, queryTerm);
+                Model.XmlQueryArtist(attribute, queryTerm);
             }
             catch (Exception e)
             {
@@ -258,7 +264,7 @@ namespace CLIM
 
             try
             {
-                Model.XmlQuerySong(attribute, queryTerm);
+                Model.XmlQueryAlbum(attribute, queryTerm);
             }
             catch (Exception e)
             {

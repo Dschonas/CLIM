@@ -9,7 +9,7 @@ namespace CLIM
     public class Album
     {
         int collectionID, trackCount;
-        string collectionName, currency, collectionViewLink, artworkLink;
+        string collectionName, currency, collectionViewLink, artworkLink, artistName;
         Decimal collectionPrice;
         DateTime releaseDate;
         List<Media> mediaList = new List<Media>();
@@ -142,6 +142,19 @@ namespace CLIM
             {
                 if (value != null && value.Length > 0)
                     artworkLink = value;
+            }
+        }
+
+        public string ArtistName
+        {
+            get
+            {
+                return artistName;
+            }
+
+            set
+            {
+                artistName = value;
             }
         }
 

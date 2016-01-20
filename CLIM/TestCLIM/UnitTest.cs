@@ -95,13 +95,13 @@ namespace TestCLIM
             Assert.IsNotNull(m);
         }
 
-        [TestMethod]
+        //[TestMethod]
         //[ExpectedException(typeof(ArgumentNullException))]
-        public void TestModel_CreateObjects_Success()
-        {
-            View view = new View();
-            Model m = new Model(view);
-            m.CreateObjects(null); //Doesn't fail because of the try() and catch() in the method
-        }
+        //public void TestModel_CreateObjects_Success()
+        //{
+        //    View view = new View();
+        //    Model m = new Model(view);
+        //    m.CreateObjects(null); //Doesn't fail because of the try() and catch() in the method
+        //}
     }
 }

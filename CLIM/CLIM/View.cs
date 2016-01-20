@@ -69,7 +69,7 @@ namespace CLIM
             Console.WriteLine("SEARCH OFFLINE \t Offers to search for the given term based on your");
             Console.WriteLine("\t\t past search history. (XML file)");
             Console.WriteLine("SAVE \t\t Stores your last search in a XML file.");
-            Console.WriteLine("DELETE \t\t Deletes your XML history file.");
+            //Console.WriteLine("DELETE \t\t Deletes your XML history file.");
             Console.WriteLine("EXIT \t\t Exits the application.\n");
             //Console.WriteLine("DELETE \t\t Delete a certain artist, album, song or the whole history.");
             //Console.WriteLine("START TRACK \t Starts a sample of a certain track.");
